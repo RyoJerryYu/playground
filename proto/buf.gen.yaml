@@ -17,9 +17,24 @@ plugins:
   - remote: buf.build/grpc-ecosystem/gateway
     out: gengo
     opt: paths=source_relative
+  # - local: protoc-gen-grpc-gateway-client
+  #   out: gengo
+  #   opt: 
+  #   - paths=source_relative
+  - local: protoc-gen-go-json
+    out: gengo
+    opt: 
+    - paths=source_relative
+    - marshal_emit_unpopulated=true
+    - unmarshal_discard_unknown=true
+  - local: protoc-gen-go-enumx
+    out: gengo
+    opt: paths=source_relative
+
   - remote: buf.build/grpc-ecosystem/openapiv2
     out: gendoc
     opt: output_format=yaml,allow_merge=true
+
   - remote: buf.build/community/stephenh-ts-proto
     out: gents
     opt:
