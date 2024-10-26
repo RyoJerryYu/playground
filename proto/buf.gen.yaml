@@ -1,0 +1,32 @@
+version: v2
+managed:
+  enabled: true
+  disable:
+    - file_option: go_package
+      module: buf.build/googleapis/googleapis
+  override:
+    - file_option: go_package_prefix
+      value: github.com/RyoJerryYu/proto/gen/
+plugins:
+  - remote: buf.build/protocolbuffers/go
+    out: gengo
+    opt: paths=source_relative
+  - remote: buf.build/grpc/go
+    out: gengo
+    opt: paths=source_relative
+  - remote: buf.build/grpc-ecosystem/gateway
+    out: gengo
+    opt: paths=source_relative
+  - remote: buf.build/grpc-ecosystem/openapiv2
+    out: gendoc
+    opt: output_format=yaml,allow_merge=true
+  - remote: buf.build/community/stephenh-ts-proto
+    out: gents
+    opt:
+      - env=browser
+      - useOptionals=messages
+      - outputServices=generic-definitions
+      - outputJsonMethods=false
+      - useExactTypes=false
+      - esModuleInterop=true
+      - stringEnums=true
