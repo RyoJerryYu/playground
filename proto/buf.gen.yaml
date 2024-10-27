@@ -30,11 +30,11 @@ plugins:
     opt: 
     - paths=source_relative
   # protoc-gen-fieldmask
-  # - local: protoc-gen-fieldmask
-  #   out: gengo
-  #   opt: 
-  #   - paths=source_relative
-  #   - maxdepth=2
+  - local: protoc-gen-fieldmask
+    out: gengo
+    opt: 
+    - paths=source_relative
+    - maxdepth=2
   # protoc-gen-go-json
   - local: protoc-gen-go-json
     out: gengo
