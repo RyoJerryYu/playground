@@ -8,32 +8,52 @@ managed:
     - file_option: go_package_prefix
       value: github.com/RyoJerryYu/proto/gen/
 plugins:
+  # protoc-gen-go
   - remote: buf.build/protocolbuffers/go
     out: gengo
     opt: paths=source_relative
+  # protoc-gen-go-grpc
   - remote: buf.build/grpc/go
     out: gengo
     opt: paths=source_relative
+  # protoc-gen-go-grpc-gateway
   - remote: buf.build/grpc-ecosystem/gateway
     out: gengo
     opt: paths=source_relative
-  # - local: protoc-gen-grpc-gateway-client
+  # protoc-gen-go-validate
+  - remote: buf.build/bufbuild/validate-go
+    out: gengo
+    opt: paths=source_relative
+  # protoc-gen-grpc-gateway-client
+  - local: protoc-gen-grpc-gateway-client
+    out: gengo
+    opt: 
+    - paths=source_relative
+  # protoc-gen-fieldmask
+  # - local: protoc-gen-fieldmask
   #   out: gengo
   #   opt: 
   #   - paths=source_relative
+  #   - maxdepth=2
+  # protoc-gen-go-json
   - local: protoc-gen-go-json
     out: gengo
     opt: 
     - paths=source_relative
     - marshal_emit_unpopulated=true
     - unmarshal_discard_unknown=true
+  # protoc-gen-go-enumx
   - local: protoc-gen-go-enumx
     out: gengo
     opt: paths=source_relative
 
-  - remote: buf.build/grpc-ecosystem/openapiv2
+  - remote: buf.build/grpc-ecosystem/openapiv2:v2.22.0
     out: gendoc
-    opt: output_format=yaml,allow_merge=true
+    opt: 
+    - output_format=yaml
+    - allow_merge=true
+  - remote: buf.build/community/pseudomuto-doc:v1.5.1
+    out: gendoc
 
   - remote: buf.build/community/stephenh-ts-proto
     out: gents

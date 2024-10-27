@@ -9,3 +9,4 @@ tools: tidy
 .PHONY: proto
 proto: tools
 	@./proto/generate.sh
+	@$(MAKE) tidy
