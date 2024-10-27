@@ -989,8 +989,6 @@ func (m *Node) validate(all bool) error {
 
 	var errors []error
 
-	// no validation rules for Type
-
 	switch v := m.Node.(type) {
 	case *Node_LineBreakNode:
 		if v == nil {

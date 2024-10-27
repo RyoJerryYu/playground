@@ -258,8 +258,8 @@ export interface LinkMetadata {
   image: string;
 }
 
+/** NodeType type = 1; */
 export interface Node {
-  type: NodeType;
   /** Block nodes. */
   lineBreakNode?: LineBreakNode | undefined;
   paragraphNode?: ParagraphNode | undefined;
@@ -880,7 +880,6 @@ export const LinkMetadata: MessageFns<LinkMetadata> = {
 
 function createBaseNode(): Node {
   return {
-    type: NodeType.NODE_UNSPECIFIED,
     lineBreakNode: undefined,
     paragraphNode: undefined,
     codeBlockNode: undefined,
@@ -917,9 +916,6 @@ function createBaseNode(): Node {
 
 export const Node: MessageFns<Node> = {
   encode(message: Node, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.type !== NodeType.NODE_UNSPECIFIED) {
-      writer.uint32(8).int32(nodeTypeToNumber(message.type));
-    }
     if (message.lineBreakNode !== undefined) {
       LineBreakNode.encode(message.lineBreakNode, writer.uint32(90).fork()).join();
     }
@@ -1023,13 +1019,6 @@ export const Node: MessageFns<Node> = {
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
-        case 1:
-          if (tag !== 8) {
-            break;
-          }
-
-          message.type = nodeTypeFromJSON(reader.int32());
-          continue;
         case 11:
           if (tag !== 90) {
             break;
@@ -1261,7 +1250,6 @@ export const Node: MessageFns<Node> = {
   },
   fromPartial(object: DeepPartial<Node>): Node {
     const message = createBaseNode();
-    message.type = object.type ?? NodeType.NODE_UNSPECIFIED;
     message.lineBreakNode = (object.lineBreakNode !== undefined && object.lineBreakNode !== null)
       ? LineBreakNode.fromPartial(object.lineBreakNode)
       : undefined;

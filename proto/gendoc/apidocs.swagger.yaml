@@ -526,19 +526,10 @@ paths:
               property:
                 $ref: '#/definitions/memosMemoProperty'
                 readOnly: true
-              parent:
-                type: string
-                title: |-
-                  The name of the parent memo.
-                  Format: memos/{id}
-                readOnly: true
               snippet:
                 type: string
                 description: The snippet of the memo content. Plain text only.
                 readOnly: true
-              location:
-                $ref: '#/definitions/v1memosLocation'
-                description: The location of the memo.
       tags:
         - MemoService
   /api/v1/{name_1}:
@@ -1109,16 +1100,9 @@ paths:
                 format: byte
               externalLink:
                 type: string
-              type:
-                type: string
               size:
                 type: string
                 format: int64
-              memo:
-                type: string
-                title: |-
-                  The related memo.
-                  Format: memos/{id}
       tags:
         - ResourceService
   /api/v1/{setting.name}:
@@ -1344,9 +1328,6 @@ definitions:
     properties:
       description:
         type: string
-      expiresAt:
-        type: string
-        format: date-time
   apiHttpBody:
     type: object
     properties:
@@ -1560,8 +1541,6 @@ definitions:
   markdownNode:
     type: object
     properties:
-      type:
-        $ref: '#/definitions/markdownNodeType'
       lineBreakNode:
         $ref: '#/definitions/markdownLineBreakNode'
         description: Block nodes.
@@ -1626,45 +1605,7 @@ definitions:
         $ref: '#/definitions/markdownSpoilerNode'
       htmlElementNode:
         $ref: '#/definitions/markdownHTMLElementNode'
-  markdownNodeType:
-    type: string
-    enum:
-      - NODE_UNSPECIFIED
-      - LINE_BREAK
-      - PARAGRAPH
-      - CODE_BLOCK
-      - HEADING
-      - HORIZONTAL_RULE
-      - BLOCKQUOTE
-      - LIST
-      - ORDERED_LIST_ITEM
-      - UNORDERED_LIST_ITEM
-      - TASK_LIST_ITEM
-      - MATH_BLOCK
-      - TABLE
-      - EMBEDDED_CONTENT
-      - TEXT
-      - BOLD
-      - ITALIC
-      - BOLD_ITALIC
-      - CODE
-      - IMAGE
-      - LINK
-      - AUTO_LINK
-      - TAG
-      - STRIKETHROUGH
-      - ESCAPING_CHARACTER
-      - MATH
-      - HIGHLIGHT
-      - SUBSCRIPT
-      - SUPERSCRIPT
-      - REFERENCED_CONTENT
-      - SPOILER
-      - HTML_ELEMENT
-    default: NODE_UNSPECIFIED
-    description: |2-
-       - LINE_BREAK: Block nodes.
-       - TEXT: Inline nodes.
+    title: NodeType type = 1;
   markdownOrderedListItemNode:
     type: object
     properties:
@@ -1824,8 +1765,6 @@ definitions:
         items:
           type: object
           $ref: '#/definitions/memosMemoRelation'
-      location:
-        $ref: '#/definitions/v1memosLocation'
   memosListMemoCommentsResponse:
     type: object
     properties:
@@ -1899,8 +1838,6 @@ definitions:
         title: |-
           The name of related memo.
           Format: "memos/{uid}"
-      type:
-        $ref: '#/definitions/memosMemoRelationType'
   memosMemoRelationMemo:
     type: object
     properties:
@@ -1915,13 +1852,6 @@ definitions:
         type: string
         description: The snippet of the memo content. Plain text only.
         readOnly: true
-  memosMemoRelationType:
-    type: string
-    enum:
-      - TYPE_UNSPECIFIED
-      - REFERENCE
-      - COMMENT
-    default: TYPE_UNSPECIFIED
   memosMemoView:
     type: string
     enum:
@@ -2107,16 +2037,9 @@ definitions:
         format: byte
       externalLink:
         type: string
-      type:
-        type: string
       size:
         type: string
         format: int64
-      memo:
-        type: string
-        title: |-
-          The related memo.
-          Format: memos/{id}
   rpcStatus:
     type: object
     properties:
@@ -2201,17 +2124,6 @@ definitions:
       expiresAt:
         type: string
         format: date-time
-  v1memosLocation:
-    type: object
-    properties:
-      placeholder:
-        type: string
-      latitude:
-        type: number
-        format: double
-      longitude:
-        type: number
-        format: double
   v1memosMemo:
     type: object
     properties:
@@ -2275,19 +2187,10 @@ definitions:
       property:
         $ref: '#/definitions/memosMemoProperty'
         readOnly: true
-      parent:
-        type: string
-        title: |-
-          The name of the parent memo.
-          Format: memos/{id}
-        readOnly: true
       snippet:
         type: string
         description: The snippet of the memo content. Plain text only.
         readOnly: true
-      location:
-        $ref: '#/definitions/v1memosLocation'
-        description: The location of the memo.
   v1usersUserSetting:
     type: object
     properties:

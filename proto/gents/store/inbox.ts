@@ -10,8 +10,6 @@ import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 export const protobufPackage = "memos.store";
 
 export interface InboxMessage {
-  type: InboxMessage_Type;
-  activityId?: number | undefined;
 }
 
 export enum InboxMessage_Type {
@@ -54,17 +52,11 @@ export function inboxMessage_TypeToNumber(object: InboxMessage_Type): number {
 }
 
 function createBaseInboxMessage(): InboxMessage {
-  return { type: InboxMessage_Type.TYPE_UNSPECIFIED, activityId: undefined };
+  return {};
 }
 
 export const InboxMessage: MessageFns<InboxMessage> = {
-  encode(message: InboxMessage, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.type !== InboxMessage_Type.TYPE_UNSPECIFIED) {
-      writer.uint32(8).int32(inboxMessage_TypeToNumber(message.type));
-    }
-    if (message.activityId !== undefined) {
-      writer.uint32(16).int32(message.activityId);
-    }
+  encode(_: InboxMessage, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     return writer;
   },
 
@@ -75,20 +67,6 @@ export const InboxMessage: MessageFns<InboxMessage> = {
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
-        case 1:
-          if (tag !== 8) {
-            break;
-          }
-
-          message.type = inboxMessage_TypeFromJSON(reader.int32());
-          continue;
-        case 2:
-          if (tag !== 16) {
-            break;
-          }
-
-          message.activityId = reader.int32();
-          continue;
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -101,10 +79,8 @@ export const InboxMessage: MessageFns<InboxMessage> = {
   create(base?: DeepPartial<InboxMessage>): InboxMessage {
     return InboxMessage.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<InboxMessage>): InboxMessage {
+  fromPartial(_: DeepPartial<InboxMessage>): InboxMessage {
     const message = createBaseInboxMessage();
-    message.type = object.type ?? InboxMessage_Type.TYPE_UNSPECIFIED;
-    message.activityId = object.activityId ?? undefined;
     return message;
   },
 };
