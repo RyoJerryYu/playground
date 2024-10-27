@@ -129,20 +129,12 @@ export interface Memo {
   resources: Resource[];
   relations: MemoRelation[];
   reactions: Reaction[];
+  otherReaction?: Reaction | undefined;
   property?:
     | MemoProperty
     | undefined;
-  /**
-   * The name of the parent memo.
-   * Format: memos/{id}
-   */
-  parent?:
-    | string
-    | undefined;
   /** The snippet of the memo content. Plain text only. */
   snippet: string;
-  /** The location of the memo. */
-  location?: Location | undefined;
 }
 
 export interface MemoProperty {
@@ -164,7 +156,6 @@ export interface CreateMemoRequest {
   visibility: Visibility;
   resources: Resource[];
   relations: MemoRelation[];
-  location?: Location | undefined;
 }
 
 export interface ListMemosRequest {
@@ -344,10 +335,9 @@ function createBaseMemo(): Memo {
     resources: [],
     relations: [],
     reactions: [],
+    otherReaction: undefined,
     property: undefined,
-    parent: undefined,
     snippet: "",
-    location: undefined,
   };
 }
 
@@ -398,17 +388,14 @@ export const Memo: MessageFns<Memo> = {
     for (const v of message.reactions) {
       Reaction.encode(v!, writer.uint32(130).fork()).join();
     }
+    if (message.otherReaction !== undefined) {
+      Reaction.encode(message.otherReaction, writer.uint32(162).fork()).join();
+    }
     if (message.property !== undefined) {
       MemoProperty.encode(message.property, writer.uint32(138).fork()).join();
     }
-    if (message.parent !== undefined) {
-      writer.uint32(146).string(message.parent);
-    }
     if (message.snippet !== "") {
       writer.uint32(154).string(message.snippet);
-    }
-    if (message.location !== undefined) {
-      Location.encode(message.location, writer.uint32(162).fork()).join();
     }
     return writer;
   },
@@ -525,6 +512,13 @@ export const Memo: MessageFns<Memo> = {
 
           message.reactions.push(Reaction.decode(reader, reader.uint32()));
           continue;
+        case 20:
+          if (tag !== 162) {
+            break;
+          }
+
+          message.otherReaction = Reaction.decode(reader, reader.uint32());
+          continue;
         case 17:
           if (tag !== 138) {
             break;
@@ -532,26 +526,12 @@ export const Memo: MessageFns<Memo> = {
 
           message.property = MemoProperty.decode(reader, reader.uint32());
           continue;
-        case 18:
-          if (tag !== 146) {
-            break;
-          }
-
-          message.parent = reader.string();
-          continue;
         case 19:
           if (tag !== 154) {
             break;
           }
 
           message.snippet = reader.string();
-          continue;
-        case 20:
-          if (tag !== 162) {
-            break;
-          }
-
-          message.location = Location.decode(reader, reader.uint32());
           continue;
       }
       if ((tag & 7) === 4 || tag === 0) {
@@ -582,14 +562,13 @@ export const Memo: MessageFns<Memo> = {
     message.resources = object.resources?.map((e) => Resource.fromPartial(e)) || [];
     message.relations = object.relations?.map((e) => MemoRelation.fromPartial(e)) || [];
     message.reactions = object.reactions?.map((e) => Reaction.fromPartial(e)) || [];
+    message.otherReaction = (object.otherReaction !== undefined && object.otherReaction !== null)
+      ? Reaction.fromPartial(object.otherReaction)
+      : undefined;
     message.property = (object.property !== undefined && object.property !== null)
       ? MemoProperty.fromPartial(object.property)
       : undefined;
-    message.parent = object.parent ?? undefined;
     message.snippet = object.snippet ?? "";
-    message.location = (object.location !== undefined && object.location !== null)
-      ? Location.fromPartial(object.location)
-      : undefined;
     return message;
   },
 };
@@ -751,13 +730,7 @@ export const Location: MessageFns<Location> = {
 };
 
 function createBaseCreateMemoRequest(): CreateMemoRequest {
-  return {
-    content: "",
-    visibility: Visibility.VISIBILITY_UNSPECIFIED,
-    resources: [],
-    relations: [],
-    location: undefined,
-  };
+  return { content: "", visibility: Visibility.VISIBILITY_UNSPECIFIED, resources: [], relations: [] };
 }
 
 export const CreateMemoRequest: MessageFns<CreateMemoRequest> = {
@@ -773,9 +746,6 @@ export const CreateMemoRequest: MessageFns<CreateMemoRequest> = {
     }
     for (const v of message.relations) {
       MemoRelation.encode(v!, writer.uint32(34).fork()).join();
-    }
-    if (message.location !== undefined) {
-      Location.encode(message.location, writer.uint32(42).fork()).join();
     }
     return writer;
   },
@@ -815,13 +785,6 @@ export const CreateMemoRequest: MessageFns<CreateMemoRequest> = {
 
           message.relations.push(MemoRelation.decode(reader, reader.uint32()));
           continue;
-        case 5:
-          if (tag !== 42) {
-            break;
-          }
-
-          message.location = Location.decode(reader, reader.uint32());
-          continue;
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -840,9 +803,6 @@ export const CreateMemoRequest: MessageFns<CreateMemoRequest> = {
     message.visibility = object.visibility ?? Visibility.VISIBILITY_UNSPECIFIED;
     message.resources = object.resources?.map((e) => Resource.fromPartial(e)) || [];
     message.relations = object.relations?.map((e) => MemoRelation.fromPartial(e)) || [];
-    message.location = (object.location !== undefined && object.location !== null)
-      ? Location.fromPartial(object.location)
-      : undefined;
     return message;
   },
 };

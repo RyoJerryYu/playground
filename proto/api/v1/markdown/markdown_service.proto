@@ -108,7 +108,7 @@ enum NodeType {
 }
 
 message Node {
-  NodeType type = 1;
+  // NodeType type = 1;
 
   oneof node {
     // Block nodes.

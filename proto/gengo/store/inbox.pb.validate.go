@@ -57,12 +57,6 @@ func (m *InboxMessage) validate(all bool) error {
 
 	var errors []error
 
-	// no validation rules for Type
-
-	if m.ActivityId != nil {
-		// no validation rules for ActivityId
-	}
-
 	if len(errors) > 0 {
 		return InboxMessageMultiError(errors)
 	}

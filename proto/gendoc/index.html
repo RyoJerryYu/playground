@@ -305,6 +305,10 @@
                 </li>
               
                 <li>
+                  <a href="#memos.api.v1.auth.SignInWithSSORequest.Nested"><span class="badge">M</span>SignInWithSSORequest.Nested</a>
+                </li>
+              
+                <li>
                   <a href="#memos.api.v1.auth.SignOutRequest"><span class="badge">M</span>SignOutRequest</a>
                 </li>
               
@@ -1037,13 +1041,6 @@ Format: users/{id} </p></td>
                   <td>description</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>expires_at</td>
-                  <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
-                  <td>optional</td>
                   <td><p> </p></td>
                 </tr>
               
@@ -1984,6 +1981,37 @@ Format: users/{id} </p></td>
                   <td><p>The redirect URI. </p></td>
                 </tr>
               
+                <tr>
+                  <td>nested</td>
+                  <td><a href="#memos.api.v1.auth.SignInWithSSORequest.Nested">SignInWithSSORequest.Nested</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="memos.api.v1.auth.SignInWithSSORequest.Nested">SignInWithSSORequest.Nested</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>idp_id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
             </tbody>
           </table>
 
@@ -2775,7 +2803,7 @@ Format: users/{id} </p></td>
         
       
         <h3 id="memos.api.v1.markdown.Node">Node</h3>
-        <p></p>
+        <p>NodeType type = 1;</p>
 
         
           <table class="field-table">
@@ -2783,13 +2811,6 @@ Format: users/{id} </p></td>
               <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
             </thead>
             <tbody>
-              
-                <tr>
-                  <td>type</td>
-                  <td><a href="#memos.api.v1.markdown.NodeType">NodeType</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
               
                 <tr>
                   <td>line_break_node</td>
@@ -3917,13 +3938,6 @@ Format: &#34;memos/{uid}&#34; </p></td>
 Format: &#34;memos/{uid}&#34; </p></td>
                 </tr>
               
-                <tr>
-                  <td>type</td>
-                  <td><a href="#memos.api.v1.memos.MemoRelation.Type">MemoRelation.Type</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
             </tbody>
           </table>
 
@@ -4299,25 +4313,10 @@ id is the system generated unique identifier. </p></td>
                 </tr>
               
                 <tr>
-                  <td>type</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
                   <td>size</td>
                   <td><a href="#int64">int64</a></td>
                   <td></td>
                   <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>memo</td>
-                  <td><a href="#string">string</a></td>
-                  <td>optional</td>
-                  <td><p>The related memo.
-Format: memos/{id} </p></td>
                 </tr>
               
             </tbody>
@@ -4588,13 +4587,6 @@ Format: memos/{id} </p></td>
                   <td>relations</td>
                   <td><a href="#memos.api.v1.memos.MemoRelation">MemoRelation</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>location</td>
-                  <td><a href="#memos.api.v1.memos.Location">Location</a></td>
-                  <td>optional</td>
                   <td><p> </p></td>
                 </tr>
               
@@ -5174,6 +5166,13 @@ Format: users/{id} </p></td>
                 </tr>
               
                 <tr>
+                  <td>other_reaction</td>
+                  <td><a href="#memos.api.v1.memos.Reaction">Reaction</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
                   <td>property</td>
                   <td><a href="#memos.api.v1.memos.MemoProperty">MemoProperty</a></td>
                   <td></td>
@@ -5181,25 +5180,10 @@ Format: users/{id} </p></td>
                 </tr>
               
                 <tr>
-                  <td>parent</td>
-                  <td><a href="#string">string</a></td>
-                  <td>optional</td>
-                  <td><p>The name of the parent memo.
-Format: memos/{id} </p></td>
-                </tr>
-              
-                <tr>
                   <td>snippet</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p>The snippet of the memo content. Plain text only. </p></td>
-                </tr>
-              
-                <tr>
-                  <td>location</td>
-                  <td><a href="#memos.api.v1.memos.Location">Location</a></td>
-                  <td>optional</td>
-                  <td><p>The location of the memo. </p></td>
                 </tr>
               
             </tbody>
@@ -6145,30 +6129,6 @@ Format: memos/{id} </p></td>
         <p></p>
 
         
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>type</td>
-                  <td><a href="#memos.store.InboxMessage.Type">InboxMessage.Type</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>activity_id</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td>optional</td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
 
         
       

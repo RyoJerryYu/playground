@@ -186,7 +186,6 @@ export interface CreateUserAccessTokenRequest {
    */
   name: string;
   description: string;
-  expiresAt?: Date | undefined;
 }
 
 export interface DeleteUserAccessTokenRequest {
@@ -1146,7 +1145,7 @@ export const ListUserAccessTokensResponse: MessageFns<ListUserAccessTokensRespon
 };
 
 function createBaseCreateUserAccessTokenRequest(): CreateUserAccessTokenRequest {
-  return { name: "", description: "", expiresAt: undefined };
+  return { name: "", description: "" };
 }
 
 export const CreateUserAccessTokenRequest: MessageFns<CreateUserAccessTokenRequest> = {
@@ -1156,9 +1155,6 @@ export const CreateUserAccessTokenRequest: MessageFns<CreateUserAccessTokenReque
     }
     if (message.description !== "") {
       writer.uint32(18).string(message.description);
-    }
-    if (message.expiresAt !== undefined) {
-      Timestamp.encode(toTimestamp(message.expiresAt), writer.uint32(26).fork()).join();
     }
     return writer;
   },
@@ -1184,13 +1180,6 @@ export const CreateUserAccessTokenRequest: MessageFns<CreateUserAccessTokenReque
 
           message.description = reader.string();
           continue;
-        case 3:
-          if (tag !== 26) {
-            break;
-          }
-
-          message.expiresAt = fromTimestamp(Timestamp.decode(reader, reader.uint32()));
-          continue;
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -1207,7 +1196,6 @@ export const CreateUserAccessTokenRequest: MessageFns<CreateUserAccessTokenReque
     const message = createBaseCreateUserAccessTokenRequest();
     message.name = object.name ?? "";
     message.description = object.description ?? "";
-    message.expiresAt = object.expiresAt ?? undefined;
     return message;
   },
 };

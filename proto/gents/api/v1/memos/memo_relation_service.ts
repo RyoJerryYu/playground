@@ -22,7 +22,6 @@ export interface MemoRelation {
    * Format: "memos/{uid}"
    */
   relatedMemo?: MemoRelation_Memo | undefined;
-  type: MemoRelation_Type;
 }
 
 export enum MemoRelation_Type {
@@ -76,7 +75,7 @@ export interface MemoRelation_Memo {
 }
 
 function createBaseMemoRelation(): MemoRelation {
-  return { memo: undefined, relatedMemo: undefined, type: MemoRelation_Type.TYPE_UNSPECIFIED };
+  return { memo: undefined, relatedMemo: undefined };
 }
 
 export const MemoRelation: MessageFns<MemoRelation> = {
@@ -86,9 +85,6 @@ export const MemoRelation: MessageFns<MemoRelation> = {
     }
     if (message.relatedMemo !== undefined) {
       MemoRelation_Memo.encode(message.relatedMemo, writer.uint32(18).fork()).join();
-    }
-    if (message.type !== MemoRelation_Type.TYPE_UNSPECIFIED) {
-      writer.uint32(24).int32(memoRelation_TypeToNumber(message.type));
     }
     return writer;
   },
@@ -114,13 +110,6 @@ export const MemoRelation: MessageFns<MemoRelation> = {
 
           message.relatedMemo = MemoRelation_Memo.decode(reader, reader.uint32());
           continue;
-        case 3:
-          if (tag !== 24) {
-            break;
-          }
-
-          message.type = memoRelation_TypeFromJSON(reader.int32());
-          continue;
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -141,7 +130,6 @@ export const MemoRelation: MessageFns<MemoRelation> = {
     message.relatedMemo = (object.relatedMemo !== undefined && object.relatedMemo !== null)
       ? MemoRelation_Memo.fromPartial(object.relatedMemo)
       : undefined;
-    message.type = object.type ?? MemoRelation_Type.TYPE_UNSPECIFIED;
     return message;
   },
 };

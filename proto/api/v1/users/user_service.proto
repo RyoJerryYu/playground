@@ -216,7 +216,7 @@ message CreateUserAccessTokenRequest {
 
   string description = 2;
 
-  optional google.protobuf.Timestamp expires_at = 3;
+  // optional google.protobuf.Timestamp expires_at = 3;
 }
 
 message DeleteUserAccessTokenRequest {

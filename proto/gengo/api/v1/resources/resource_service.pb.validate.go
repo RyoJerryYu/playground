@@ -96,13 +96,7 @@ func (m *Resource) validate(all bool) error {
 
 	// no validation rules for ExternalLink
 
-	// no validation rules for Type
-
 	// no validation rules for Size
-
-	if m.Memo != nil {
-		// no validation rules for Memo
-	}
 
 	if len(errors) > 0 {
 		return ResourceMultiError(errors)

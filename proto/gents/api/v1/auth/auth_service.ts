@@ -34,6 +34,11 @@ export interface SignInWithSSORequest {
   code: string;
   /** The redirect URI. */
   redirectUri: string;
+  nested?: SignInWithSSORequest_Nested | undefined;
+}
+
+export interface SignInWithSSORequest_Nested {
+  idpId: number;
 }
 
 export interface SignUpRequest {
@@ -193,7 +198,7 @@ export const SignInRequest: MessageFns<SignInRequest> = {
 };
 
 function createBaseSignInWithSSORequest(): SignInWithSSORequest {
-  return { idpId: 0, code: "", redirectUri: "" };
+  return { idpId: 0, code: "", redirectUri: "", nested: undefined };
 }
 
 export const SignInWithSSORequest: MessageFns<SignInWithSSORequest> = {
@@ -206,6 +211,9 @@ export const SignInWithSSORequest: MessageFns<SignInWithSSORequest> = {
     }
     if (message.redirectUri !== "") {
       writer.uint32(26).string(message.redirectUri);
+    }
+    if (message.nested !== undefined) {
+      SignInWithSSORequest_Nested.encode(message.nested, writer.uint32(34).fork()).join();
     }
     return writer;
   },
@@ -238,6 +246,13 @@ export const SignInWithSSORequest: MessageFns<SignInWithSSORequest> = {
 
           message.redirectUri = reader.string();
           continue;
+        case 4:
+          if (tag !== 34) {
+            break;
+          }
+
+          message.nested = SignInWithSSORequest_Nested.decode(reader, reader.uint32());
+          continue;
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -255,6 +270,54 @@ export const SignInWithSSORequest: MessageFns<SignInWithSSORequest> = {
     message.idpId = object.idpId ?? 0;
     message.code = object.code ?? "";
     message.redirectUri = object.redirectUri ?? "";
+    message.nested = (object.nested !== undefined && object.nested !== null)
+      ? SignInWithSSORequest_Nested.fromPartial(object.nested)
+      : undefined;
+    return message;
+  },
+};
+
+function createBaseSignInWithSSORequest_Nested(): SignInWithSSORequest_Nested {
+  return { idpId: 0 };
+}
+
+export const SignInWithSSORequest_Nested: MessageFns<SignInWithSSORequest_Nested> = {
+  encode(message: SignInWithSSORequest_Nested, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.idpId !== 0) {
+      writer.uint32(8).int32(message.idpId);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): SignInWithSSORequest_Nested {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseSignInWithSSORequest_Nested();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          if (tag !== 8) {
+            break;
+          }
+
+          message.idpId = reader.int32();
+          continue;
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  create(base?: DeepPartial<SignInWithSSORequest_Nested>): SignInWithSSORequest_Nested {
+    return SignInWithSSORequest_Nested.fromPartial(base ?? {});
+  },
+  fromPartial(object: DeepPartial<SignInWithSSORequest_Nested>): SignInWithSSORequest_Nested {
+    const message = createBaseSignInWithSSORequest_Nested();
+    message.idpId = object.idpId ?? 0;
     return message;
   },
 };

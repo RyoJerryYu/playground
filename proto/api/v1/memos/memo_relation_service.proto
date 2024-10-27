@@ -20,7 +20,7 @@ message MemoRelation {
     REFERENCE = 1;
     COMMENT = 2;
   }
-  Type type = 3;
+  // Type type = 3;
 
   message Memo {
     // The name of the memo.

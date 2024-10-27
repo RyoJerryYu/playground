@@ -115,8 +115,6 @@ func (m *MemoRelation) validate(all bool) error {
 		}
 	}
 
-	// no validation rules for Type
-
 	if len(errors) > 0 {
 		return MemoRelationMultiError(errors)
 	}

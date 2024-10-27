@@ -26,13 +26,7 @@ export interface Resource {
   filename: string;
   content: Uint8Array;
   externalLink: string;
-  type: string;
   size: number;
-  /**
-   * The related memo.
-   * Format: memos/{id}
-   */
-  memo?: string | undefined;
 }
 
 export interface CreateResourceRequest {
@@ -95,9 +89,7 @@ function createBaseResource(): Resource {
     filename: "",
     content: new Uint8Array(0),
     externalLink: "",
-    type: "",
     size: 0,
-    memo: undefined,
   };
 }
 
@@ -121,14 +113,8 @@ export const Resource: MessageFns<Resource> = {
     if (message.externalLink !== "") {
       writer.uint32(50).string(message.externalLink);
     }
-    if (message.type !== "") {
-      writer.uint32(58).string(message.type);
-    }
     if (message.size !== 0) {
       writer.uint32(64).int64(message.size);
-    }
-    if (message.memo !== undefined) {
-      writer.uint32(74).string(message.memo);
     }
     return writer;
   },
@@ -182,26 +168,12 @@ export const Resource: MessageFns<Resource> = {
 
           message.externalLink = reader.string();
           continue;
-        case 7:
-          if (tag !== 58) {
-            break;
-          }
-
-          message.type = reader.string();
-          continue;
         case 8:
           if (tag !== 64) {
             break;
           }
 
           message.size = longToNumber(reader.int64());
-          continue;
-        case 9:
-          if (tag !== 74) {
-            break;
-          }
-
-          message.memo = reader.string();
           continue;
       }
       if ((tag & 7) === 4 || tag === 0) {
@@ -223,9 +195,7 @@ export const Resource: MessageFns<Resource> = {
     message.filename = object.filename ?? "";
     message.content = object.content ?? new Uint8Array(0);
     message.externalLink = object.externalLink ?? "";
-    message.type = object.type ?? "";
     message.size = object.size ?? 0;
-    message.memo = object.memo ?? undefined;
     return message;
   },
 };

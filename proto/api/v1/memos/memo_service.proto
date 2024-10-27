@@ -164,18 +164,19 @@ message Memo {
   repeated MemoRelation relations = 15;
 
   repeated Reaction reactions = 16 [(google.api.field_behavior) = OUTPUT_ONLY];
+  Reaction other_reaction = 20;
 
   MemoProperty property = 17 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // The name of the parent memo.
   // Format: memos/{id}
-  optional string parent = 18 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // optional string parent = 18 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // The snippet of the memo content. Plain text only.
   string snippet = 19 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // The location of the memo.
-  optional Location location = 20;
+  // optional Location location = 20;
 }
 
 message MemoProperty {
@@ -201,7 +202,7 @@ message CreateMemoRequest {
 
   repeated MemoRelation relations = 4;
 
-  optional Location location = 5;
+  // optional Location location = 5;
 }
 
 enum MemoView {

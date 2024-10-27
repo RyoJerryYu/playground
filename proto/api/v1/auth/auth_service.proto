@@ -53,6 +53,12 @@ message SignInWithSSORequest {
   string code = 2;
   // The redirect URI.
   string redirect_uri = 3;
+
+  message Nested {
+    int32 idp_id = 1;
+  }
+
+  Nested nested = 4;
 }
 
 message SignUpRequest {

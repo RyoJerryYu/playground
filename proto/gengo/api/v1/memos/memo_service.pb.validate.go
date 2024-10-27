@@ -298,6 +298,35 @@ func (m *Memo) validate(all bool) error {
 	}
 
 	if all {
+		switch v := interface{}(m.GetOtherReaction()).(type) {
+		case interface{ ValidateAll() error }:
+			if err := v.ValidateAll(); err != nil {
+				errors = append(errors, MemoValidationError{
+					field:  "OtherReaction",
+					reason: "embedded message failed validation",
+					cause:  err,
+				})
+			}
+		case interface{ Validate() error }:
+			if err := v.Validate(); err != nil {
+				errors = append(errors, MemoValidationError{
+					field:  "OtherReaction",
+					reason: "embedded message failed validation",
+					cause:  err,
+				})
+			}
+		}
+	} else if v, ok := interface{}(m.GetOtherReaction()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return MemoValidationError{
+				field:  "OtherReaction",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if all {
 		switch v := interface{}(m.GetProperty()).(type) {
 		case interface{ ValidateAll() error }:
 			if err := v.ValidateAll(); err != nil {
@@ -327,43 +356,6 @@ func (m *Memo) validate(all bool) error {
 	}
 
 	// no validation rules for Snippet
-
-	if m.Parent != nil {
-		// no validation rules for Parent
-	}
-
-	if m.Location != nil {
-
-		if all {
-			switch v := interface{}(m.GetLocation()).(type) {
-			case interface{ ValidateAll() error }:
-				if err := v.ValidateAll(); err != nil {
-					errors = append(errors, MemoValidationError{
-						field:  "Location",
-						reason: "embedded message failed validation",
-						cause:  err,
-					})
-				}
-			case interface{ Validate() error }:
-				if err := v.Validate(); err != nil {
-					errors = append(errors, MemoValidationError{
-						field:  "Location",
-						reason: "embedded message failed validation",
-						cause:  err,
-					})
-				}
-			}
-		} else if v, ok := interface{}(m.GetLocation()).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return MemoValidationError{
-					field:  "Location",
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
-			}
-		}
-
-	}
 
 	if len(errors) > 0 {
 		return MemoMultiError(errors)
@@ -740,39 +732,6 @@ func (m *CreateMemoRequest) validate(all bool) error {
 			if err := v.Validate(); err != nil {
 				return CreateMemoRequestValidationError{
 					field:  fmt.Sprintf("Relations[%v]", idx),
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
-			}
-		}
-
-	}
-
-	if m.Location != nil {
-
-		if all {
-			switch v := interface{}(m.GetLocation()).(type) {
-			case interface{ ValidateAll() error }:
-				if err := v.ValidateAll(); err != nil {
-					errors = append(errors, CreateMemoRequestValidationError{
-						field:  "Location",
-						reason: "embedded message failed validation",
-						cause:  err,
-					})
-				}
-			case interface{ Validate() error }:
-				if err := v.Validate(); err != nil {
-					errors = append(errors, CreateMemoRequestValidationError{
-						field:  "Location",
-						reason: "embedded message failed validation",
-						cause:  err,
-					})
-				}
-			}
-		} else if v, ok := interface{}(m.GetLocation()).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return CreateMemoRequestValidationError{
-					field:  "Location",
 					reason: "embedded message failed validation",
 					cause:  err,
 				}
