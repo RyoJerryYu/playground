@@ -9,7 +9,7 @@ import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 import { Empty } from "../../../google/protobuf/empty";
 import { User } from "../users/user_service";
 
-export const protobufPackage = "memos.api.v1";
+export const protobufPackage = "memos.api.v1.auth";
 
 export interface GetAuthStatusRequest {
 }
@@ -352,7 +352,7 @@ export const SignOutRequest: MessageFns<SignOutRequest> = {
 export type AuthServiceDefinition = typeof AuthServiceDefinition;
 export const AuthServiceDefinition = {
   name: "AuthService",
-  fullName: "memos.api.v1.AuthService",
+  fullName: "memos.api.v1.auth.AuthService",
   methods: {
     /** GetAuthStatus returns the current auth status of the user. */
     getAuthStatus: {

@@ -4,7 +4,7 @@
 // - protoc             (unknown)
 // source: api/v1/auth/auth_service.proto
 
-package apiv1
+package auth
 
 import (
 	context "context"
@@ -21,11 +21,11 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	AuthService_GetAuthStatus_FullMethodName = "/memos.api.v1.AuthService/GetAuthStatus"
-	AuthService_SignIn_FullMethodName        = "/memos.api.v1.AuthService/SignIn"
-	AuthService_SignInWithSSO_FullMethodName = "/memos.api.v1.AuthService/SignInWithSSO"
-	AuthService_SignUp_FullMethodName        = "/memos.api.v1.AuthService/SignUp"
-	AuthService_SignOut_FullMethodName       = "/memos.api.v1.AuthService/SignOut"
+	AuthService_GetAuthStatus_FullMethodName = "/memos.api.v1.auth.AuthService/GetAuthStatus"
+	AuthService_SignIn_FullMethodName        = "/memos.api.v1.auth.AuthService/SignIn"
+	AuthService_SignInWithSSO_FullMethodName = "/memos.api.v1.auth.AuthService/SignInWithSSO"
+	AuthService_SignUp_FullMethodName        = "/memos.api.v1.auth.AuthService/SignUp"
+	AuthService_SignOut_FullMethodName       = "/memos.api.v1.auth.AuthService/SignOut"
 )
 
 // AuthServiceClient is the client API for AuthService service.
@@ -256,7 +256,7 @@ func _AuthService_SignOut_Handler(srv interface{}, ctx context.Context, dec func
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AuthService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "memos.api.v1.AuthService",
+	ServiceName: "memos.api.v1.auth.AuthService",
 	HandlerType: (*AuthServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

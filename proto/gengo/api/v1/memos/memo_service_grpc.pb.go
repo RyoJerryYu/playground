@@ -4,7 +4,7 @@
 // - protoc             (unknown)
 // source: api/v1/memos/memo_service.proto
 
-package apiv1
+package memos
 
 import (
 	context "context"
@@ -20,23 +20,23 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	MemoService_CreateMemo_FullMethodName         = "/memos.api.v1.MemoService/CreateMemo"
-	MemoService_ListMemos_FullMethodName          = "/memos.api.v1.MemoService/ListMemos"
-	MemoService_GetMemo_FullMethodName            = "/memos.api.v1.MemoService/GetMemo"
-	MemoService_GetMemoByUid_FullMethodName       = "/memos.api.v1.MemoService/GetMemoByUid"
-	MemoService_UpdateMemo_FullMethodName         = "/memos.api.v1.MemoService/UpdateMemo"
-	MemoService_DeleteMemo_FullMethodName         = "/memos.api.v1.MemoService/DeleteMemo"
-	MemoService_RenameMemoTag_FullMethodName      = "/memos.api.v1.MemoService/RenameMemoTag"
-	MemoService_DeleteMemoTag_FullMethodName      = "/memos.api.v1.MemoService/DeleteMemoTag"
-	MemoService_SetMemoResources_FullMethodName   = "/memos.api.v1.MemoService/SetMemoResources"
-	MemoService_ListMemoResources_FullMethodName  = "/memos.api.v1.MemoService/ListMemoResources"
-	MemoService_SetMemoRelations_FullMethodName   = "/memos.api.v1.MemoService/SetMemoRelations"
-	MemoService_ListMemoRelations_FullMethodName  = "/memos.api.v1.MemoService/ListMemoRelations"
-	MemoService_CreateMemoComment_FullMethodName  = "/memos.api.v1.MemoService/CreateMemoComment"
-	MemoService_ListMemoComments_FullMethodName   = "/memos.api.v1.MemoService/ListMemoComments"
-	MemoService_ListMemoReactions_FullMethodName  = "/memos.api.v1.MemoService/ListMemoReactions"
-	MemoService_UpsertMemoReaction_FullMethodName = "/memos.api.v1.MemoService/UpsertMemoReaction"
-	MemoService_DeleteMemoReaction_FullMethodName = "/memos.api.v1.MemoService/DeleteMemoReaction"
+	MemoService_CreateMemo_FullMethodName         = "/memos.api.v1.memos.MemoService/CreateMemo"
+	MemoService_ListMemos_FullMethodName          = "/memos.api.v1.memos.MemoService/ListMemos"
+	MemoService_GetMemo_FullMethodName            = "/memos.api.v1.memos.MemoService/GetMemo"
+	MemoService_GetMemoByUid_FullMethodName       = "/memos.api.v1.memos.MemoService/GetMemoByUid"
+	MemoService_UpdateMemo_FullMethodName         = "/memos.api.v1.memos.MemoService/UpdateMemo"
+	MemoService_DeleteMemo_FullMethodName         = "/memos.api.v1.memos.MemoService/DeleteMemo"
+	MemoService_RenameMemoTag_FullMethodName      = "/memos.api.v1.memos.MemoService/RenameMemoTag"
+	MemoService_DeleteMemoTag_FullMethodName      = "/memos.api.v1.memos.MemoService/DeleteMemoTag"
+	MemoService_SetMemoResources_FullMethodName   = "/memos.api.v1.memos.MemoService/SetMemoResources"
+	MemoService_ListMemoResources_FullMethodName  = "/memos.api.v1.memos.MemoService/ListMemoResources"
+	MemoService_SetMemoRelations_FullMethodName   = "/memos.api.v1.memos.MemoService/SetMemoRelations"
+	MemoService_ListMemoRelations_FullMethodName  = "/memos.api.v1.memos.MemoService/ListMemoRelations"
+	MemoService_CreateMemoComment_FullMethodName  = "/memos.api.v1.memos.MemoService/CreateMemoComment"
+	MemoService_ListMemoComments_FullMethodName   = "/memos.api.v1.memos.MemoService/ListMemoComments"
+	MemoService_ListMemoReactions_FullMethodName  = "/memos.api.v1.memos.MemoService/ListMemoReactions"
+	MemoService_UpsertMemoReaction_FullMethodName = "/memos.api.v1.memos.MemoService/UpsertMemoReaction"
+	MemoService_DeleteMemoReaction_FullMethodName = "/memos.api.v1.memos.MemoService/DeleteMemoReaction"
 )
 
 // MemoServiceClient is the client API for MemoService service.
@@ -687,7 +687,7 @@ func _MemoService_DeleteMemoReaction_Handler(srv interface{}, ctx context.Contex
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var MemoService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "memos.api.v1.MemoService",
+	ServiceName: "memos.api.v1.memos.MemoService",
 	HandlerType: (*MemoServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

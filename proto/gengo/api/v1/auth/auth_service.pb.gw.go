@@ -2,11 +2,11 @@
 // source: api/v1/auth/auth_service.proto
 
 /*
-Package apiv1 is a reverse proxy.
+Package auth is a reverse proxy.
 
 It translates gRPC into RESTful JSON APIs.
 */
-package apiv1
+package auth
 
 import (
 	"context"
@@ -190,7 +190,7 @@ func RegisterAuthServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.AuthService/GetAuthStatus", runtime.WithHTTPPathPattern("/api/v1/auth/status"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.auth.AuthService/GetAuthStatus", runtime.WithHTTPPathPattern("/api/v1/auth/status"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -215,7 +215,7 @@ func RegisterAuthServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.AuthService/SignIn", runtime.WithHTTPPathPattern("/api/v1/auth/signin"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.auth.AuthService/SignIn", runtime.WithHTTPPathPattern("/api/v1/auth/signin"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -240,7 +240,7 @@ func RegisterAuthServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.AuthService/SignInWithSSO", runtime.WithHTTPPathPattern("/api/v1/auth/signin/sso"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.auth.AuthService/SignInWithSSO", runtime.WithHTTPPathPattern("/api/v1/auth/signin/sso"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -265,7 +265,7 @@ func RegisterAuthServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.AuthService/SignUp", runtime.WithHTTPPathPattern("/api/v1/auth/signup"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.auth.AuthService/SignUp", runtime.WithHTTPPathPattern("/api/v1/auth/signup"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -290,7 +290,7 @@ func RegisterAuthServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.AuthService/SignOut", runtime.WithHTTPPathPattern("/api/v1/auth/signout"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.auth.AuthService/SignOut", runtime.WithHTTPPathPattern("/api/v1/auth/signout"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -354,7 +354,7 @@ func RegisterAuthServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.AuthService/GetAuthStatus", runtime.WithHTTPPathPattern("/api/v1/auth/status"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.auth.AuthService/GetAuthStatus", runtime.WithHTTPPathPattern("/api/v1/auth/status"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -376,7 +376,7 @@ func RegisterAuthServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.AuthService/SignIn", runtime.WithHTTPPathPattern("/api/v1/auth/signin"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.auth.AuthService/SignIn", runtime.WithHTTPPathPattern("/api/v1/auth/signin"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -398,7 +398,7 @@ func RegisterAuthServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.AuthService/SignInWithSSO", runtime.WithHTTPPathPattern("/api/v1/auth/signin/sso"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.auth.AuthService/SignInWithSSO", runtime.WithHTTPPathPattern("/api/v1/auth/signin/sso"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -420,7 +420,7 @@ func RegisterAuthServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.AuthService/SignUp", runtime.WithHTTPPathPattern("/api/v1/auth/signup"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.auth.AuthService/SignUp", runtime.WithHTTPPathPattern("/api/v1/auth/signup"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -442,7 +442,7 @@ func RegisterAuthServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.AuthService/SignOut", runtime.WithHTTPPathPattern("/api/v1/auth/signout"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.auth.AuthService/SignOut", runtime.WithHTTPPathPattern("/api/v1/auth/signout"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return

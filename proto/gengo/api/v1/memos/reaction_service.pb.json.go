@@ -4,7 +4,7 @@
 //- protoc (unknown)
 //source: api/v1/memos/reaction_service.proto
 
-package apiv1
+package memos
 
 import (
 	protojson "google.golang.org/protobuf/encoding/protojson"

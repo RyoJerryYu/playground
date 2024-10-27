@@ -15,7 +15,7 @@ import { Resource } from "../resources/resource_service";
 import { MemoRelation } from "./memo_relation_service";
 import { Reaction } from "./reaction_service";
 
-export const protobufPackage = "memos.api.v1";
+export const protobufPackage = "memos.api.v1.memos";
 
 export enum Visibility {
   VISIBILITY_UNSPECIFIED = "VISIBILITY_UNSPECIFIED",
@@ -1942,7 +1942,7 @@ export const DeleteMemoReactionRequest: MessageFns<DeleteMemoReactionRequest> = 
 export type MemoServiceDefinition = typeof MemoServiceDefinition;
 export const MemoServiceDefinition = {
   name: "MemoService",
-  fullName: "memos.api.v1.MemoService",
+  fullName: "memos.api.v1.memos.MemoService",
   methods: {
     /** CreateMemo creates a memo. */
     createMemo: {

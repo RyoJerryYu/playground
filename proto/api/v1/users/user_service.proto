@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package memos.api.v1;
+package memos.api.v1.users;
 
 import "api/v1/common/common.proto";
 import "google/api/annotations.proto";
@@ -114,7 +114,7 @@ message User {
 
   string password = 9 [(google.api.field_behavior) = INPUT_ONLY];
 
-  RowStatus row_status = 10;
+  common.RowStatus row_status = 10;
 
   google.protobuf.Timestamp create_time = 11;
 

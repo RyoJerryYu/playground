@@ -4,7 +4,7 @@
 //- protoc (unknown)
 //source: api/v1/markdown/markdown_service.proto
 
-package apiv1
+package markdown
 
 import (
 	bytes "bytes"

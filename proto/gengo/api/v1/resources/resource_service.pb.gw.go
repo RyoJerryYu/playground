@@ -2,11 +2,11 @@
 // source: api/v1/resources/resource_service.proto
 
 /*
-Package apiv1 is a reverse proxy.
+Package resources is a reverse proxy.
 
 It translates gRPC into RESTful JSON APIs.
 */
-package apiv1
+package resources
 
 import (
 	"context"
@@ -436,7 +436,7 @@ func RegisterResourceServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.ResourceService/CreateResource", runtime.WithHTTPPathPattern("/api/v1/resources"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.resources.ResourceService/CreateResource", runtime.WithHTTPPathPattern("/api/v1/resources"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -461,7 +461,7 @@ func RegisterResourceServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.ResourceService/ListResources", runtime.WithHTTPPathPattern("/api/v1/resources"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.resources.ResourceService/ListResources", runtime.WithHTTPPathPattern("/api/v1/resources"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -486,7 +486,7 @@ func RegisterResourceServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.ResourceService/GetResource", runtime.WithHTTPPathPattern("/api/v1/{name=resources/*}"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.resources.ResourceService/GetResource", runtime.WithHTTPPathPattern("/api/v1/{name=resources/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -511,7 +511,7 @@ func RegisterResourceServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.ResourceService/GetResourceByUid", runtime.WithHTTPPathPattern("/api/v1/resources:by-uid/{uid}"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.resources.ResourceService/GetResourceByUid", runtime.WithHTTPPathPattern("/api/v1/resources:by-uid/{uid}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -536,7 +536,7 @@ func RegisterResourceServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.ResourceService/GetResourceBinary", runtime.WithHTTPPathPattern("/file/{name=resources/*}/{filename}"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.resources.ResourceService/GetResourceBinary", runtime.WithHTTPPathPattern("/file/{name=resources/*}/{filename}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -561,7 +561,7 @@ func RegisterResourceServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.ResourceService/UpdateResource", runtime.WithHTTPPathPattern("/api/v1/{resource.name=resources/*}"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.resources.ResourceService/UpdateResource", runtime.WithHTTPPathPattern("/api/v1/{resource.name=resources/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -586,7 +586,7 @@ func RegisterResourceServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.ResourceService/DeleteResource", runtime.WithHTTPPathPattern("/api/v1/{name=resources/*}"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.resources.ResourceService/DeleteResource", runtime.WithHTTPPathPattern("/api/v1/{name=resources/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -650,7 +650,7 @@ func RegisterResourceServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.ResourceService/CreateResource", runtime.WithHTTPPathPattern("/api/v1/resources"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.resources.ResourceService/CreateResource", runtime.WithHTTPPathPattern("/api/v1/resources"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -672,7 +672,7 @@ func RegisterResourceServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.ResourceService/ListResources", runtime.WithHTTPPathPattern("/api/v1/resources"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.resources.ResourceService/ListResources", runtime.WithHTTPPathPattern("/api/v1/resources"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -694,7 +694,7 @@ func RegisterResourceServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.ResourceService/GetResource", runtime.WithHTTPPathPattern("/api/v1/{name=resources/*}"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.resources.ResourceService/GetResource", runtime.WithHTTPPathPattern("/api/v1/{name=resources/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -716,7 +716,7 @@ func RegisterResourceServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.ResourceService/GetResourceByUid", runtime.WithHTTPPathPattern("/api/v1/resources:by-uid/{uid}"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.resources.ResourceService/GetResourceByUid", runtime.WithHTTPPathPattern("/api/v1/resources:by-uid/{uid}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -738,7 +738,7 @@ func RegisterResourceServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.ResourceService/GetResourceBinary", runtime.WithHTTPPathPattern("/file/{name=resources/*}/{filename}"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.resources.ResourceService/GetResourceBinary", runtime.WithHTTPPathPattern("/file/{name=resources/*}/{filename}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -760,7 +760,7 @@ func RegisterResourceServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.ResourceService/UpdateResource", runtime.WithHTTPPathPattern("/api/v1/{resource.name=resources/*}"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.resources.ResourceService/UpdateResource", runtime.WithHTTPPathPattern("/api/v1/{resource.name=resources/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -782,7 +782,7 @@ func RegisterResourceServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.ResourceService/DeleteResource", runtime.WithHTTPPathPattern("/api/v1/{name=resources/*}"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.resources.ResourceService/DeleteResource", runtime.WithHTTPPathPattern("/api/v1/{name=resources/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return

@@ -4,7 +4,7 @@
 // - protoc             (unknown)
 // source: api/v1/resources/resource_service.proto
 
-package apiv1
+package resources
 
 import (
 	context "context"
@@ -21,13 +21,13 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	ResourceService_CreateResource_FullMethodName    = "/memos.api.v1.ResourceService/CreateResource"
-	ResourceService_ListResources_FullMethodName     = "/memos.api.v1.ResourceService/ListResources"
-	ResourceService_GetResource_FullMethodName       = "/memos.api.v1.ResourceService/GetResource"
-	ResourceService_GetResourceByUid_FullMethodName  = "/memos.api.v1.ResourceService/GetResourceByUid"
-	ResourceService_GetResourceBinary_FullMethodName = "/memos.api.v1.ResourceService/GetResourceBinary"
-	ResourceService_UpdateResource_FullMethodName    = "/memos.api.v1.ResourceService/UpdateResource"
-	ResourceService_DeleteResource_FullMethodName    = "/memos.api.v1.ResourceService/DeleteResource"
+	ResourceService_CreateResource_FullMethodName    = "/memos.api.v1.resources.ResourceService/CreateResource"
+	ResourceService_ListResources_FullMethodName     = "/memos.api.v1.resources.ResourceService/ListResources"
+	ResourceService_GetResource_FullMethodName       = "/memos.api.v1.resources.ResourceService/GetResource"
+	ResourceService_GetResourceByUid_FullMethodName  = "/memos.api.v1.resources.ResourceService/GetResourceByUid"
+	ResourceService_GetResourceBinary_FullMethodName = "/memos.api.v1.resources.ResourceService/GetResourceBinary"
+	ResourceService_UpdateResource_FullMethodName    = "/memos.api.v1.resources.ResourceService/UpdateResource"
+	ResourceService_DeleteResource_FullMethodName    = "/memos.api.v1.resources.ResourceService/DeleteResource"
 )
 
 // ResourceServiceClient is the client API for ResourceService service.
@@ -328,7 +328,7 @@ func _ResourceService_DeleteResource_Handler(srv interface{}, ctx context.Contex
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ResourceService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "memos.api.v1.ResourceService",
+	ServiceName: "memos.api.v1.resources.ResourceService",
 	HandlerType: (*ResourceServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

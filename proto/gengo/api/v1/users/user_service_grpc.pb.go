@@ -4,7 +4,7 @@
 // - protoc             (unknown)
 // source: api/v1/users/user_service.proto
 
-package apiv1
+package users
 
 import (
 	context "context"
@@ -21,18 +21,18 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	UserService_ListUsers_FullMethodName             = "/memos.api.v1.UserService/ListUsers"
-	UserService_SearchUsers_FullMethodName           = "/memos.api.v1.UserService/SearchUsers"
-	UserService_GetUser_FullMethodName               = "/memos.api.v1.UserService/GetUser"
-	UserService_GetUserAvatarBinary_FullMethodName   = "/memos.api.v1.UserService/GetUserAvatarBinary"
-	UserService_CreateUser_FullMethodName            = "/memos.api.v1.UserService/CreateUser"
-	UserService_UpdateUser_FullMethodName            = "/memos.api.v1.UserService/UpdateUser"
-	UserService_DeleteUser_FullMethodName            = "/memos.api.v1.UserService/DeleteUser"
-	UserService_GetUserSetting_FullMethodName        = "/memos.api.v1.UserService/GetUserSetting"
-	UserService_UpdateUserSetting_FullMethodName     = "/memos.api.v1.UserService/UpdateUserSetting"
-	UserService_ListUserAccessTokens_FullMethodName  = "/memos.api.v1.UserService/ListUserAccessTokens"
-	UserService_CreateUserAccessToken_FullMethodName = "/memos.api.v1.UserService/CreateUserAccessToken"
-	UserService_DeleteUserAccessToken_FullMethodName = "/memos.api.v1.UserService/DeleteUserAccessToken"
+	UserService_ListUsers_FullMethodName             = "/memos.api.v1.users.UserService/ListUsers"
+	UserService_SearchUsers_FullMethodName           = "/memos.api.v1.users.UserService/SearchUsers"
+	UserService_GetUser_FullMethodName               = "/memos.api.v1.users.UserService/GetUser"
+	UserService_GetUserAvatarBinary_FullMethodName   = "/memos.api.v1.users.UserService/GetUserAvatarBinary"
+	UserService_CreateUser_FullMethodName            = "/memos.api.v1.users.UserService/CreateUser"
+	UserService_UpdateUser_FullMethodName            = "/memos.api.v1.users.UserService/UpdateUser"
+	UserService_DeleteUser_FullMethodName            = "/memos.api.v1.users.UserService/DeleteUser"
+	UserService_GetUserSetting_FullMethodName        = "/memos.api.v1.users.UserService/GetUserSetting"
+	UserService_UpdateUserSetting_FullMethodName     = "/memos.api.v1.users.UserService/UpdateUserSetting"
+	UserService_ListUserAccessTokens_FullMethodName  = "/memos.api.v1.users.UserService/ListUserAccessTokens"
+	UserService_CreateUserAccessToken_FullMethodName = "/memos.api.v1.users.UserService/CreateUserAccessToken"
+	UserService_DeleteUserAccessToken_FullMethodName = "/memos.api.v1.users.UserService/DeleteUserAccessToken"
 )
 
 // UserServiceClient is the client API for UserService service.
@@ -508,7 +508,7 @@ func _UserService_DeleteUserAccessToken_Handler(srv interface{}, ctx context.Con
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var UserService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "memos.api.v1.UserService",
+	ServiceName: "memos.api.v1.users.UserService",
 	HandlerType: (*UserServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

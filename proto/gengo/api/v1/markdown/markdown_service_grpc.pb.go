@@ -4,7 +4,7 @@
 // - protoc             (unknown)
 // source: api/v1/markdown/markdown_service.proto
 
-package apiv1
+package markdown
 
 import (
 	context "context"
@@ -19,10 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	MarkdownService_ParseMarkdown_FullMethodName          = "/memos.api.v1.MarkdownService/ParseMarkdown"
-	MarkdownService_RestoreMarkdownNodes_FullMethodName   = "/memos.api.v1.MarkdownService/RestoreMarkdownNodes"
-	MarkdownService_StringifyMarkdownNodes_FullMethodName = "/memos.api.v1.MarkdownService/StringifyMarkdownNodes"
-	MarkdownService_GetLinkMetadata_FullMethodName        = "/memos.api.v1.MarkdownService/GetLinkMetadata"
+	MarkdownService_ParseMarkdown_FullMethodName          = "/memos.api.v1.markdown.MarkdownService/ParseMarkdown"
+	MarkdownService_RestoreMarkdownNodes_FullMethodName   = "/memos.api.v1.markdown.MarkdownService/RestoreMarkdownNodes"
+	MarkdownService_StringifyMarkdownNodes_FullMethodName = "/memos.api.v1.markdown.MarkdownService/StringifyMarkdownNodes"
+	MarkdownService_GetLinkMetadata_FullMethodName        = "/memos.api.v1.markdown.MarkdownService/GetLinkMetadata"
 )
 
 // MarkdownServiceClient is the client API for MarkdownService service.
@@ -218,7 +218,7 @@ func _MarkdownService_GetLinkMetadata_Handler(srv interface{}, ctx context.Conte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var MarkdownService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "memos.api.v1.MarkdownService",
+	ServiceName: "memos.api.v1.markdown.MarkdownService",
 	HandlerType: (*MarkdownServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

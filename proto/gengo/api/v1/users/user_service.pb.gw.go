@@ -2,11 +2,11 @@
 // source: api/v1/users/user_service.proto
 
 /*
-Package apiv1 is a reverse proxy.
+Package users is a reverse proxy.
 
 It translates gRPC into RESTful JSON APIs.
 */
-package apiv1
+package users
 
 import (
 	"context"
@@ -736,7 +736,7 @@ func RegisterUserServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.UserService/ListUsers", runtime.WithHTTPPathPattern("/api/v1/users"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.users.UserService/ListUsers", runtime.WithHTTPPathPattern("/api/v1/users"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -761,7 +761,7 @@ func RegisterUserServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.UserService/SearchUsers", runtime.WithHTTPPathPattern("/api/v1/users:search"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.users.UserService/SearchUsers", runtime.WithHTTPPathPattern("/api/v1/users:search"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -786,7 +786,7 @@ func RegisterUserServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.UserService/GetUser", runtime.WithHTTPPathPattern("/api/v1/{name=users/*}"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.users.UserService/GetUser", runtime.WithHTTPPathPattern("/api/v1/{name=users/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -811,7 +811,7 @@ func RegisterUserServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.UserService/GetUserAvatarBinary", runtime.WithHTTPPathPattern("/file/{name=users/*}/avatar"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.users.UserService/GetUserAvatarBinary", runtime.WithHTTPPathPattern("/file/{name=users/*}/avatar"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -836,7 +836,7 @@ func RegisterUserServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.UserService/CreateUser", runtime.WithHTTPPathPattern("/api/v1/users"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.users.UserService/CreateUser", runtime.WithHTTPPathPattern("/api/v1/users"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -861,7 +861,7 @@ func RegisterUserServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.UserService/UpdateUser", runtime.WithHTTPPathPattern("/api/v1/{user.name=users/*}"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.users.UserService/UpdateUser", runtime.WithHTTPPathPattern("/api/v1/{user.name=users/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -886,7 +886,7 @@ func RegisterUserServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.UserService/DeleteUser", runtime.WithHTTPPathPattern("/api/v1/{name=users/*}"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.users.UserService/DeleteUser", runtime.WithHTTPPathPattern("/api/v1/{name=users/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -911,7 +911,7 @@ func RegisterUserServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.UserService/GetUserSetting", runtime.WithHTTPPathPattern("/api/v1/{name=users/*}/setting"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.users.UserService/GetUserSetting", runtime.WithHTTPPathPattern("/api/v1/{name=users/*}/setting"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -936,7 +936,7 @@ func RegisterUserServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.UserService/UpdateUserSetting", runtime.WithHTTPPathPattern("/api/v1/{setting.name=users/*/setting}"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.users.UserService/UpdateUserSetting", runtime.WithHTTPPathPattern("/api/v1/{setting.name=users/*/setting}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -961,7 +961,7 @@ func RegisterUserServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.UserService/ListUserAccessTokens", runtime.WithHTTPPathPattern("/api/v1/{name=users/*}/access_tokens"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.users.UserService/ListUserAccessTokens", runtime.WithHTTPPathPattern("/api/v1/{name=users/*}/access_tokens"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -986,7 +986,7 @@ func RegisterUserServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.UserService/CreateUserAccessToken", runtime.WithHTTPPathPattern("/api/v1/{name=users/*}/access_tokens"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.users.UserService/CreateUserAccessToken", runtime.WithHTTPPathPattern("/api/v1/{name=users/*}/access_tokens"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1011,7 +1011,7 @@ func RegisterUserServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.UserService/DeleteUserAccessToken", runtime.WithHTTPPathPattern("/api/v1/{name=users/*}/access_tokens/{access_token}"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.users.UserService/DeleteUserAccessToken", runtime.WithHTTPPathPattern("/api/v1/{name=users/*}/access_tokens/{access_token}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1075,7 +1075,7 @@ func RegisterUserServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.UserService/ListUsers", runtime.WithHTTPPathPattern("/api/v1/users"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.users.UserService/ListUsers", runtime.WithHTTPPathPattern("/api/v1/users"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1097,7 +1097,7 @@ func RegisterUserServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.UserService/SearchUsers", runtime.WithHTTPPathPattern("/api/v1/users:search"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.users.UserService/SearchUsers", runtime.WithHTTPPathPattern("/api/v1/users:search"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1119,7 +1119,7 @@ func RegisterUserServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.UserService/GetUser", runtime.WithHTTPPathPattern("/api/v1/{name=users/*}"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.users.UserService/GetUser", runtime.WithHTTPPathPattern("/api/v1/{name=users/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1141,7 +1141,7 @@ func RegisterUserServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.UserService/GetUserAvatarBinary", runtime.WithHTTPPathPattern("/file/{name=users/*}/avatar"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.users.UserService/GetUserAvatarBinary", runtime.WithHTTPPathPattern("/file/{name=users/*}/avatar"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1163,7 +1163,7 @@ func RegisterUserServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.UserService/CreateUser", runtime.WithHTTPPathPattern("/api/v1/users"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.users.UserService/CreateUser", runtime.WithHTTPPathPattern("/api/v1/users"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1185,7 +1185,7 @@ func RegisterUserServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.UserService/UpdateUser", runtime.WithHTTPPathPattern("/api/v1/{user.name=users/*}"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.users.UserService/UpdateUser", runtime.WithHTTPPathPattern("/api/v1/{user.name=users/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1207,7 +1207,7 @@ func RegisterUserServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.UserService/DeleteUser", runtime.WithHTTPPathPattern("/api/v1/{name=users/*}"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.users.UserService/DeleteUser", runtime.WithHTTPPathPattern("/api/v1/{name=users/*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1229,7 +1229,7 @@ func RegisterUserServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.UserService/GetUserSetting", runtime.WithHTTPPathPattern("/api/v1/{name=users/*}/setting"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.users.UserService/GetUserSetting", runtime.WithHTTPPathPattern("/api/v1/{name=users/*}/setting"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1251,7 +1251,7 @@ func RegisterUserServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.UserService/UpdateUserSetting", runtime.WithHTTPPathPattern("/api/v1/{setting.name=users/*/setting}"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.users.UserService/UpdateUserSetting", runtime.WithHTTPPathPattern("/api/v1/{setting.name=users/*/setting}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1273,7 +1273,7 @@ func RegisterUserServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.UserService/ListUserAccessTokens", runtime.WithHTTPPathPattern("/api/v1/{name=users/*}/access_tokens"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.users.UserService/ListUserAccessTokens", runtime.WithHTTPPathPattern("/api/v1/{name=users/*}/access_tokens"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1295,7 +1295,7 @@ func RegisterUserServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.UserService/CreateUserAccessToken", runtime.WithHTTPPathPattern("/api/v1/{name=users/*}/access_tokens"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.users.UserService/CreateUserAccessToken", runtime.WithHTTPPathPattern("/api/v1/{name=users/*}/access_tokens"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1317,7 +1317,7 @@ func RegisterUserServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.UserService/DeleteUserAccessToken", runtime.WithHTTPPathPattern("/api/v1/{name=users/*}/access_tokens/{access_token}"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.users.UserService/DeleteUserAccessToken", runtime.WithHTTPPathPattern("/api/v1/{name=users/*}/access_tokens/{access_token}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return

@@ -11,7 +11,7 @@ import { Empty } from "../../../google/protobuf/empty";
 import { FieldMask } from "../../../google/protobuf/field_mask";
 import { Timestamp } from "../../../google/protobuf/timestamp";
 
-export const protobufPackage = "memos.api.v1";
+export const protobufPackage = "memos.api.v1.resources";
 
 export interface Resource {
   /**
@@ -619,7 +619,7 @@ export const DeleteResourceRequest: MessageFns<DeleteResourceRequest> = {
 export type ResourceServiceDefinition = typeof ResourceServiceDefinition;
 export const ResourceServiceDefinition = {
   name: "ResourceService",
-  fullName: "memos.api.v1.ResourceService",
+  fullName: "memos.api.v1.resources.ResourceService",
   methods: {
     /** CreateResource creates a new resource. */
     createResource: {

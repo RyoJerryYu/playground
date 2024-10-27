@@ -21,7 +21,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/v1User'
+            $ref: '#/definitions/usersUser'
         default:
           description: An unexpected error response.
           schema:
@@ -52,7 +52,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/v1User'
+            $ref: '#/definitions/usersUser'
         default:
           description: An unexpected error response.
           schema:
@@ -100,7 +100,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/v1User'
+            $ref: '#/definitions/usersUser'
         default:
           description: An unexpected error response.
           schema:
@@ -126,7 +126,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/v1User'
+            $ref: '#/definitions/usersUser'
         default:
           description: An unexpected error response.
           schema:
@@ -141,7 +141,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/v1LinkMetadata'
+            $ref: '#/definitions/markdownLinkMetadata'
         default:
           description: An unexpected error response.
           schema:
@@ -161,7 +161,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/v1RestoreMarkdownNodesResponse'
+            $ref: '#/definitions/markdownRestoreMarkdownNodesResponse'
         default:
           description: An unexpected error response.
           schema:
@@ -171,7 +171,7 @@ paths:
           in: body
           required: true
           schema:
-            $ref: '#/definitions/v1RestoreMarkdownNodesRequest'
+            $ref: '#/definitions/markdownRestoreMarkdownNodesRequest'
       tags:
         - MarkdownService
   /api/v1/markdown/node:stringify:
@@ -182,7 +182,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/v1StringifyMarkdownNodesResponse'
+            $ref: '#/definitions/markdownStringifyMarkdownNodesResponse'
         default:
           description: An unexpected error response.
           schema:
@@ -192,7 +192,7 @@ paths:
           in: body
           required: true
           schema:
-            $ref: '#/definitions/v1StringifyMarkdownNodesRequest'
+            $ref: '#/definitions/markdownStringifyMarkdownNodesRequest'
       tags:
         - MarkdownService
   /api/v1/markdown:parse:
@@ -203,7 +203,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/v1ParseMarkdownResponse'
+            $ref: '#/definitions/markdownParseMarkdownResponse'
         default:
           description: An unexpected error response.
           schema:
@@ -213,7 +213,7 @@ paths:
           in: body
           required: true
           schema:
-            $ref: '#/definitions/v1ParseMarkdownRequest'
+            $ref: '#/definitions/markdownParseMarkdownRequest'
       tags:
         - MarkdownService
   /api/v1/memos:
@@ -224,7 +224,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/v1ListMemosResponse'
+            $ref: '#/definitions/memosListMemosResponse'
         default:
           description: An unexpected error response.
           schema:
@@ -273,7 +273,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/apiv1Memo'
+            $ref: '#/definitions/v1memosMemo'
         default:
           description: An unexpected error response.
           schema:
@@ -283,7 +283,7 @@ paths:
           in: body
           required: true
           schema:
-            $ref: '#/definitions/v1CreateMemoRequest'
+            $ref: '#/definitions/memosCreateMemoRequest'
       tags:
         - MemoService
   /api/v1/memos:by-uid/{uid}:
@@ -294,7 +294,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/apiv1Memo'
+            $ref: '#/definitions/v1memosMemo'
         default:
           description: An unexpected error response.
           schema:
@@ -337,7 +337,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/v1ListResourcesResponse'
+            $ref: '#/definitions/resourcesListResourcesResponse'
         default:
           description: An unexpected error response.
           schema:
@@ -351,7 +351,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/v1Resource'
+            $ref: '#/definitions/resourcesResource'
         default:
           description: An unexpected error response.
           schema:
@@ -361,7 +361,7 @@ paths:
           in: body
           required: true
           schema:
-            $ref: '#/definitions/v1Resource'
+            $ref: '#/definitions/resourcesResource'
       tags:
         - ResourceService
   /api/v1/resources:by-uid/{uid}:
@@ -372,7 +372,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/v1Resource'
+            $ref: '#/definitions/resourcesResource'
         default:
           description: An unexpected error response.
           schema:
@@ -393,7 +393,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/v1ListUsersResponse'
+            $ref: '#/definitions/usersListUsersResponse'
         default:
           description: An unexpected error response.
           schema:
@@ -407,7 +407,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/v1User'
+            $ref: '#/definitions/usersUser'
         default:
           description: An unexpected error response.
           schema:
@@ -417,7 +417,7 @@ paths:
           in: body
           required: true
           schema:
-            $ref: '#/definitions/v1User'
+            $ref: '#/definitions/usersUser'
       tags:
         - UserService
   /api/v1/users:search:
@@ -428,7 +428,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/v1SearchUsersResponse'
+            $ref: '#/definitions/usersSearchUsersResponse'
         default:
           description: An unexpected error response.
           schema:
@@ -451,7 +451,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/apiv1Memo'
+            $ref: '#/definitions/v1memosMemo'
         default:
           description: An unexpected error response.
           schema:
@@ -476,7 +476,7 @@ paths:
                 type: string
                 description: The user defined id of the memo.
               rowStatus:
-                $ref: '#/definitions/v1RowStatus'
+                $ref: '#/definitions/commonRowStatus'
               creator:
                 type: string
                 title: |-
@@ -497,10 +497,10 @@ paths:
                 type: array
                 items:
                   type: object
-                  $ref: '#/definitions/v1Node'
+                  $ref: '#/definitions/markdownNode'
                 readOnly: true
               visibility:
-                $ref: '#/definitions/v1Visibility'
+                $ref: '#/definitions/memosVisibility'
               tags:
                 type: array
                 items:
@@ -511,20 +511,20 @@ paths:
                 type: array
                 items:
                   type: object
-                  $ref: '#/definitions/v1Resource'
+                  $ref: '#/definitions/resourcesResource'
               relations:
                 type: array
                 items:
                   type: object
-                  $ref: '#/definitions/v1MemoRelation'
+                  $ref: '#/definitions/memosMemoRelation'
               reactions:
                 type: array
                 items:
                   type: object
-                  $ref: '#/definitions/v1Reaction'
+                  $ref: '#/definitions/memosReaction'
                 readOnly: true
               property:
-                $ref: '#/definitions/v1MemoProperty'
+                $ref: '#/definitions/memosMemoProperty'
                 readOnly: true
               parent:
                 type: string
@@ -537,7 +537,7 @@ paths:
                 description: The snippet of the memo content. Plain text only.
                 readOnly: true
               location:
-                $ref: '#/definitions/apiv1Location'
+                $ref: '#/definitions/v1memosLocation'
                 description: The location of the memo.
       tags:
         - MemoService
@@ -549,7 +549,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/v1Resource'
+            $ref: '#/definitions/resourcesResource'
         default:
           description: An unexpected error response.
           schema:
@@ -599,7 +599,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/apiv1Memo'
+            $ref: '#/definitions/v1memosMemo'
         default:
           description: An unexpected error response.
           schema:
@@ -647,7 +647,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/v1User'
+            $ref: '#/definitions/usersUser'
         default:
           description: An unexpected error response.
           schema:
@@ -695,7 +695,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/v1ListUserAccessTokensResponse'
+            $ref: '#/definitions/usersListUserAccessTokensResponse'
         default:
           description: An unexpected error response.
           schema:
@@ -718,7 +718,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/v1UserAccessToken'
+            $ref: '#/definitions/usersUserAccessToken'
         default:
           description: An unexpected error response.
           schema:
@@ -777,7 +777,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/v1ListMemoCommentsResponse'
+            $ref: '#/definitions/memosListMemoCommentsResponse'
         default:
           description: An unexpected error response.
           schema:
@@ -800,7 +800,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/apiv1Memo'
+            $ref: '#/definitions/v1memosMemo'
         default:
           description: An unexpected error response.
           schema:
@@ -818,7 +818,7 @@ paths:
           in: body
           required: true
           schema:
-            $ref: '#/definitions/v1CreateMemoRequest'
+            $ref: '#/definitions/memosCreateMemoRequest'
       tags:
         - MemoService
   /api/v1/{name}/reactions:
@@ -829,7 +829,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/v1ListMemoReactionsResponse'
+            $ref: '#/definitions/memosListMemoReactionsResponse'
         default:
           description: An unexpected error response.
           schema:
@@ -852,7 +852,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/v1Reaction'
+            $ref: '#/definitions/memosReaction'
         default:
           description: An unexpected error response.
           schema:
@@ -881,7 +881,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/v1ListMemoRelationsResponse'
+            $ref: '#/definitions/memosListMemoRelationsResponse'
         default:
           description: An unexpected error response.
           schema:
@@ -934,7 +934,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/v1ListMemoResourcesResponse'
+            $ref: '#/definitions/memosListMemoResourcesResponse'
         default:
           description: An unexpected error response.
           schema:
@@ -987,7 +987,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/apiv1UserSetting'
+            $ref: '#/definitions/v1usersUserSetting'
         default:
           description: An unexpected error response.
           schema:
@@ -1074,7 +1074,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/v1Resource'
+            $ref: '#/definitions/resourcesResource'
         default:
           description: An unexpected error response.
           schema:
@@ -1129,7 +1129,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/apiv1UserSetting'
+            $ref: '#/definitions/v1usersUserSetting'
         default:
           description: An unexpected error response.
           schema:
@@ -1168,7 +1168,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: '#/definitions/v1User'
+            $ref: '#/definitions/usersUser'
         default:
           description: An unexpected error response.
           schema:
@@ -1207,7 +1207,7 @@ paths:
               password:
                 type: string
               rowStatus:
-                $ref: '#/definitions/v1RowStatus'
+                $ref: '#/definitions/commonRowStatus'
               createTime:
                 type: string
                 format: date-time
@@ -1309,7 +1309,7 @@ definitions:
         type: array
         items:
           type: object
-          $ref: '#/definitions/v1MemoRelation'
+          $ref: '#/definitions/memosMemoRelation'
   MemoServiceSetMemoResourcesBody:
     type: object
     properties:
@@ -1317,12 +1317,12 @@ definitions:
         type: array
         items:
           type: object
-          $ref: '#/definitions/v1Resource'
+          $ref: '#/definitions/resourcesResource'
   MemoServiceUpsertMemoReactionBody:
     type: object
     properties:
       reaction:
-        $ref: '#/definitions/v1Reaction'
+        $ref: '#/definitions/memosReaction'
   TableNodeRow:
     type: object
     properties:
@@ -1330,7 +1330,7 @@ definitions:
         type: array
         items:
           type: object
-          $ref: '#/definitions/v1Node'
+          $ref: '#/definitions/markdownNode'
   UserRole:
     type: string
     enum:
@@ -1409,110 +1409,552 @@ definitions:
 
       Use of this type only changes how the request and response bodies are
       handled, all other features will continue to work unchanged.
-  apiv1Location:
+  commonRowStatus:
+    type: string
+    enum:
+      - ROW_STATUS_UNSPECIFIED
+      - ACTIVE
+      - ARCHIVED
+    default: ROW_STATUS_UNSPECIFIED
+  markdownAutoLinkNode:
     type: object
     properties:
-      placeholder:
+      url:
         type: string
-      latitude:
-        type: number
-        format: double
-      longitude:
-        type: number
-        format: double
-  apiv1Memo:
+      isRawText:
+        type: boolean
+  markdownBlockquoteNode:
+    type: object
+    properties:
+      children:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/markdownNode'
+  markdownBoldItalicNode:
+    type: object
+    properties:
+      symbol:
+        type: string
+      content:
+        type: string
+  markdownBoldNode:
+    type: object
+    properties:
+      symbol:
+        type: string
+      children:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/markdownNode'
+  markdownCodeBlockNode:
+    type: object
+    properties:
+      language:
+        type: string
+      content:
+        type: string
+  markdownCodeNode:
+    type: object
+    properties:
+      content:
+        type: string
+  markdownEmbeddedContentNode:
+    type: object
+    properties:
+      resourceName:
+        type: string
+      params:
+        type: string
+  markdownEscapingCharacterNode:
+    type: object
+    properties:
+      symbol:
+        type: string
+  markdownHTMLElementNode:
+    type: object
+    properties:
+      tagName:
+        type: string
+      attributes:
+        type: object
+        additionalProperties:
+          type: string
+  markdownHeadingNode:
+    type: object
+    properties:
+      level:
+        type: integer
+        format: int32
+      children:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/markdownNode'
+  markdownHighlightNode:
+    type: object
+    properties:
+      content:
+        type: string
+  markdownHorizontalRuleNode:
+    type: object
+    properties:
+      symbol:
+        type: string
+  markdownImageNode:
+    type: object
+    properties:
+      altText:
+        type: string
+      url:
+        type: string
+  markdownItalicNode:
+    type: object
+    properties:
+      symbol:
+        type: string
+      content:
+        type: string
+  markdownLineBreakNode:
+    type: object
+  markdownLinkMetadata:
+    type: object
+    properties:
+      title:
+        type: string
+      description:
+        type: string
+      image:
+        type: string
+  markdownLinkNode:
+    type: object
+    properties:
+      text:
+        type: string
+      url:
+        type: string
+  markdownListNode:
+    type: object
+    properties:
+      kind:
+        $ref: '#/definitions/ListNodeKind'
+      indent:
+        type: integer
+        format: int32
+      children:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/markdownNode'
+  markdownMathBlockNode:
+    type: object
+    properties:
+      content:
+        type: string
+  markdownMathNode:
+    type: object
+    properties:
+      content:
+        type: string
+  markdownNode:
+    type: object
+    properties:
+      type:
+        $ref: '#/definitions/markdownNodeType'
+      lineBreakNode:
+        $ref: '#/definitions/markdownLineBreakNode'
+        description: Block nodes.
+      paragraphNode:
+        $ref: '#/definitions/markdownParagraphNode'
+      codeBlockNode:
+        $ref: '#/definitions/markdownCodeBlockNode'
+      headingNode:
+        $ref: '#/definitions/markdownHeadingNode'
+      horizontalRuleNode:
+        $ref: '#/definitions/markdownHorizontalRuleNode'
+      blockquoteNode:
+        $ref: '#/definitions/markdownBlockquoteNode'
+      listNode:
+        $ref: '#/definitions/markdownListNode'
+      orderedListItemNode:
+        $ref: '#/definitions/markdownOrderedListItemNode'
+      unorderedListItemNode:
+        $ref: '#/definitions/markdownUnorderedListItemNode'
+      taskListItemNode:
+        $ref: '#/definitions/markdownTaskListItemNode'
+      mathBlockNode:
+        $ref: '#/definitions/markdownMathBlockNode'
+      tableNode:
+        $ref: '#/definitions/markdownTableNode'
+      embeddedContentNode:
+        $ref: '#/definitions/markdownEmbeddedContentNode'
+      textNode:
+        $ref: '#/definitions/markdownTextNode'
+        description: Inline nodes.
+      boldNode:
+        $ref: '#/definitions/markdownBoldNode'
+      italicNode:
+        $ref: '#/definitions/markdownItalicNode'
+      boldItalicNode:
+        $ref: '#/definitions/markdownBoldItalicNode'
+      codeNode:
+        $ref: '#/definitions/markdownCodeNode'
+      imageNode:
+        $ref: '#/definitions/markdownImageNode'
+      linkNode:
+        $ref: '#/definitions/markdownLinkNode'
+      autoLinkNode:
+        $ref: '#/definitions/markdownAutoLinkNode'
+      tagNode:
+        $ref: '#/definitions/markdownTagNode'
+      strikethroughNode:
+        $ref: '#/definitions/markdownStrikethroughNode'
+      escapingCharacterNode:
+        $ref: '#/definitions/markdownEscapingCharacterNode'
+      mathNode:
+        $ref: '#/definitions/markdownMathNode'
+      highlightNode:
+        $ref: '#/definitions/markdownHighlightNode'
+      subscriptNode:
+        $ref: '#/definitions/markdownSubscriptNode'
+      superscriptNode:
+        $ref: '#/definitions/markdownSuperscriptNode'
+      referencedContentNode:
+        $ref: '#/definitions/markdownReferencedContentNode'
+      spoilerNode:
+        $ref: '#/definitions/markdownSpoilerNode'
+      htmlElementNode:
+        $ref: '#/definitions/markdownHTMLElementNode'
+  markdownNodeType:
+    type: string
+    enum:
+      - NODE_UNSPECIFIED
+      - LINE_BREAK
+      - PARAGRAPH
+      - CODE_BLOCK
+      - HEADING
+      - HORIZONTAL_RULE
+      - BLOCKQUOTE
+      - LIST
+      - ORDERED_LIST_ITEM
+      - UNORDERED_LIST_ITEM
+      - TASK_LIST_ITEM
+      - MATH_BLOCK
+      - TABLE
+      - EMBEDDED_CONTENT
+      - TEXT
+      - BOLD
+      - ITALIC
+      - BOLD_ITALIC
+      - CODE
+      - IMAGE
+      - LINK
+      - AUTO_LINK
+      - TAG
+      - STRIKETHROUGH
+      - ESCAPING_CHARACTER
+      - MATH
+      - HIGHLIGHT
+      - SUBSCRIPT
+      - SUPERSCRIPT
+      - REFERENCED_CONTENT
+      - SPOILER
+      - HTML_ELEMENT
+    default: NODE_UNSPECIFIED
+    description: |2-
+       - LINE_BREAK: Block nodes.
+       - TEXT: Inline nodes.
+  markdownOrderedListItemNode:
+    type: object
+    properties:
+      number:
+        type: string
+      indent:
+        type: integer
+        format: int32
+      children:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/markdownNode'
+  markdownParagraphNode:
+    type: object
+    properties:
+      children:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/markdownNode'
+  markdownParseMarkdownRequest:
+    type: object
+    properties:
+      markdown:
+        type: string
+  markdownParseMarkdownResponse:
+    type: object
+    properties:
+      nodes:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/markdownNode'
+  markdownReferencedContentNode:
+    type: object
+    properties:
+      resourceName:
+        type: string
+      params:
+        type: string
+  markdownRestoreMarkdownNodesRequest:
+    type: object
+    properties:
+      nodes:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/markdownNode'
+  markdownRestoreMarkdownNodesResponse:
+    type: object
+    properties:
+      markdown:
+        type: string
+  markdownSpoilerNode:
+    type: object
+    properties:
+      content:
+        type: string
+  markdownStrikethroughNode:
+    type: object
+    properties:
+      content:
+        type: string
+  markdownStringifyMarkdownNodesRequest:
+    type: object
+    properties:
+      nodes:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/markdownNode'
+  markdownStringifyMarkdownNodesResponse:
+    type: object
+    properties:
+      plainText:
+        type: string
+  markdownSubscriptNode:
+    type: object
+    properties:
+      content:
+        type: string
+  markdownSuperscriptNode:
+    type: object
+    properties:
+      content:
+        type: string
+  markdownTableNode:
+    type: object
+    properties:
+      header:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/markdownNode'
+      delimiter:
+        type: array
+        items:
+          type: string
+      rows:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/TableNodeRow'
+  markdownTagNode:
+    type: object
+    properties:
+      content:
+        type: string
+  markdownTaskListItemNode:
+    type: object
+    properties:
+      symbol:
+        type: string
+      indent:
+        type: integer
+        format: int32
+      complete:
+        type: boolean
+      children:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/markdownNode'
+  markdownTextNode:
+    type: object
+    properties:
+      content:
+        type: string
+  markdownUnorderedListItemNode:
+    type: object
+    properties:
+      symbol:
+        type: string
+      indent:
+        type: integer
+        format: int32
+      children:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/markdownNode'
+  memosCreateMemoRequest:
+    type: object
+    properties:
+      content:
+        type: string
+      visibility:
+        $ref: '#/definitions/memosVisibility'
+      resources:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/resourcesResource'
+      relations:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/memosMemoRelation'
+      location:
+        $ref: '#/definitions/v1memosLocation'
+  memosListMemoCommentsResponse:
+    type: object
+    properties:
+      memos:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/v1memosMemo'
+  memosListMemoReactionsResponse:
+    type: object
+    properties:
+      reactions:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/memosReaction'
+  memosListMemoRelationsResponse:
+    type: object
+    properties:
+      relations:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/memosMemoRelation'
+  memosListMemoResourcesResponse:
+    type: object
+    properties:
+      resources:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/resourcesResource'
+  memosListMemosResponse:
+    type: object
+    properties:
+      memos:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/v1memosMemo'
+      nextPageToken:
+        type: string
+        description: |-
+          A token, which can be sent as `page_token` to retrieve the next page.
+          If this field is omitted, there are no subsequent pages.
+  memosMemoProperty:
+    type: object
+    properties:
+      tags:
+        type: array
+        items:
+          type: string
+      hasLink:
+        type: boolean
+      hasTaskList:
+        type: boolean
+      hasCode:
+        type: boolean
+      hasIncompleteTasks:
+        type: boolean
+  memosMemoRelation:
+    type: object
+    properties:
+      memo:
+        $ref: '#/definitions/memosMemoRelationMemo'
+        title: |-
+          The name of memo.
+          Format: "memos/{uid}"
+      relatedMemo:
+        $ref: '#/definitions/memosMemoRelationMemo'
+        title: |-
+          The name of related memo.
+          Format: "memos/{uid}"
+      type:
+        $ref: '#/definitions/memosMemoRelationType'
+  memosMemoRelationMemo:
     type: object
     properties:
       name:
         type: string
-        description: |-
+        title: |-
           The name of the memo.
           Format: memos/{id}
-          id is the system generated id.
       uid:
         type: string
-        description: The user defined id of the memo.
-      rowStatus:
-        $ref: '#/definitions/v1RowStatus'
+      snippet:
+        type: string
+        description: The snippet of the memo content. Plain text only.
+        readOnly: true
+  memosMemoRelationType:
+    type: string
+    enum:
+      - TYPE_UNSPECIFIED
+      - REFERENCE
+      - COMMENT
+    default: TYPE_UNSPECIFIED
+  memosMemoView:
+    type: string
+    enum:
+      - MEMO_VIEW_UNSPECIFIED
+      - MEMO_VIEW_FULL
+      - MEMO_VIEW_METADATA_ONLY
+    default: MEMO_VIEW_UNSPECIFIED
+    description: |2-
+       - MEMO_VIEW_FULL: The full view of the memo. Includes all fields.
+       - MEMO_VIEW_METADATA_ONLY: The metadata only view of the memo. Excludes the content/snippet fields.
+  memosReaction:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
       creator:
         type: string
         title: |-
           The name of the creator.
           Format: users/{id}
-      createTime:
+      contentId:
         type: string
-        format: date-time
-      updateTime:
+      reactionType:
         type: string
-        format: date-time
-      displayTime:
-        type: string
-        format: date-time
-      content:
-        type: string
-      nodes:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/v1Node'
-        readOnly: true
-      visibility:
-        $ref: '#/definitions/v1Visibility'
-      tags:
-        type: array
-        items:
-          type: string
-      pinned:
-        type: boolean
-      resources:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/v1Resource'
-      relations:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/v1MemoRelation'
-      reactions:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/v1Reaction'
-        readOnly: true
-      property:
-        $ref: '#/definitions/v1MemoProperty'
-        readOnly: true
-      parent:
-        type: string
-        title: |-
-          The name of the parent memo.
-          Format: memos/{id}
-        readOnly: true
-      snippet:
-        type: string
-        description: The snippet of the memo content. Plain text only.
-        readOnly: true
-      location:
-        $ref: '#/definitions/apiv1Location'
-        description: The location of the memo.
-  apiv1UserSetting:
-    type: object
-    properties:
-      name:
-        type: string
-        title: |-
-          The name of the user.
-          Format: users/{id}
-      locale:
-        type: string
-        description: The preferred locale of the user.
-      appearance:
-        type: string
-        description: The preferred appearance of the user.
-      memoVisibility:
-        type: string
-        description: The default visibility of the memo.
+  memosVisibility:
+    type: string
+    enum:
+      - VISIBILITY_UNSPECIFIED
+      - PRIVATE
+      - PROTECTED
+      - PUBLIC
+    default: VISIBILITY_UNSPECIFIED
   protobufAny:
     type: object
     properties:
@@ -1634,474 +2076,15 @@ definitions:
             "@type": "type.googleapis.com/google.protobuf.Duration",
             "value": "1.212s"
           }
-  rpcStatus:
-    type: object
-    properties:
-      code:
-        type: integer
-        format: int32
-      message:
-        type: string
-      details:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/protobufAny'
-  v1AutoLinkNode:
-    type: object
-    properties:
-      url:
-        type: string
-      isRawText:
-        type: boolean
-  v1BlockquoteNode:
-    type: object
-    properties:
-      children:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/v1Node'
-  v1BoldItalicNode:
-    type: object
-    properties:
-      symbol:
-        type: string
-      content:
-        type: string
-  v1BoldNode:
-    type: object
-    properties:
-      symbol:
-        type: string
-      children:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/v1Node'
-  v1CodeBlockNode:
-    type: object
-    properties:
-      language:
-        type: string
-      content:
-        type: string
-  v1CodeNode:
-    type: object
-    properties:
-      content:
-        type: string
-  v1CreateMemoRequest:
-    type: object
-    properties:
-      content:
-        type: string
-      visibility:
-        $ref: '#/definitions/v1Visibility'
-      resources:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/v1Resource'
-      relations:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/v1MemoRelation'
-      location:
-        $ref: '#/definitions/apiv1Location'
-  v1EmbeddedContentNode:
-    type: object
-    properties:
-      resourceName:
-        type: string
-      params:
-        type: string
-  v1EscapingCharacterNode:
-    type: object
-    properties:
-      symbol:
-        type: string
-  v1HTMLElementNode:
-    type: object
-    properties:
-      tagName:
-        type: string
-      attributes:
-        type: object
-        additionalProperties:
-          type: string
-  v1HeadingNode:
-    type: object
-    properties:
-      level:
-        type: integer
-        format: int32
-      children:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/v1Node'
-  v1HighlightNode:
-    type: object
-    properties:
-      content:
-        type: string
-  v1HorizontalRuleNode:
-    type: object
-    properties:
-      symbol:
-        type: string
-  v1ImageNode:
-    type: object
-    properties:
-      altText:
-        type: string
-      url:
-        type: string
-  v1ItalicNode:
-    type: object
-    properties:
-      symbol:
-        type: string
-      content:
-        type: string
-  v1LineBreakNode:
-    type: object
-  v1LinkMetadata:
-    type: object
-    properties:
-      title:
-        type: string
-      description:
-        type: string
-      image:
-        type: string
-  v1LinkNode:
-    type: object
-    properties:
-      text:
-        type: string
-      url:
-        type: string
-  v1ListMemoCommentsResponse:
-    type: object
-    properties:
-      memos:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/apiv1Memo'
-  v1ListMemoReactionsResponse:
-    type: object
-    properties:
-      reactions:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/v1Reaction'
-  v1ListMemoRelationsResponse:
-    type: object
-    properties:
-      relations:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/v1MemoRelation'
-  v1ListMemoResourcesResponse:
+  resourcesListResourcesResponse:
     type: object
     properties:
       resources:
         type: array
         items:
           type: object
-          $ref: '#/definitions/v1Resource'
-  v1ListMemosResponse:
-    type: object
-    properties:
-      memos:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/apiv1Memo'
-      nextPageToken:
-        type: string
-        description: |-
-          A token, which can be sent as `page_token` to retrieve the next page.
-          If this field is omitted, there are no subsequent pages.
-  v1ListNode:
-    type: object
-    properties:
-      kind:
-        $ref: '#/definitions/ListNodeKind'
-      indent:
-        type: integer
-        format: int32
-      children:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/v1Node'
-  v1ListResourcesResponse:
-    type: object
-    properties:
-      resources:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/v1Resource'
-  v1ListUserAccessTokensResponse:
-    type: object
-    properties:
-      accessTokens:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/v1UserAccessToken'
-  v1ListUsersResponse:
-    type: object
-    properties:
-      users:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/v1User'
-  v1MathBlockNode:
-    type: object
-    properties:
-      content:
-        type: string
-  v1MathNode:
-    type: object
-    properties:
-      content:
-        type: string
-  v1MemoProperty:
-    type: object
-    properties:
-      tags:
-        type: array
-        items:
-          type: string
-      hasLink:
-        type: boolean
-      hasTaskList:
-        type: boolean
-      hasCode:
-        type: boolean
-      hasIncompleteTasks:
-        type: boolean
-  v1MemoRelation:
-    type: object
-    properties:
-      memo:
-        $ref: '#/definitions/v1MemoRelationMemo'
-        title: |-
-          The name of memo.
-          Format: "memos/{uid}"
-      relatedMemo:
-        $ref: '#/definitions/v1MemoRelationMemo'
-        title: |-
-          The name of related memo.
-          Format: "memos/{uid}"
-      type:
-        $ref: '#/definitions/v1MemoRelationType'
-  v1MemoRelationMemo:
-    type: object
-    properties:
-      name:
-        type: string
-        title: |-
-          The name of the memo.
-          Format: memos/{id}
-      uid:
-        type: string
-      snippet:
-        type: string
-        description: The snippet of the memo content. Plain text only.
-        readOnly: true
-  v1MemoRelationType:
-    type: string
-    enum:
-      - TYPE_UNSPECIFIED
-      - REFERENCE
-      - COMMENT
-    default: TYPE_UNSPECIFIED
-  v1MemoView:
-    type: string
-    enum:
-      - MEMO_VIEW_UNSPECIFIED
-      - MEMO_VIEW_FULL
-      - MEMO_VIEW_METADATA_ONLY
-    default: MEMO_VIEW_UNSPECIFIED
-    description: |2-
-       - MEMO_VIEW_FULL: The full view of the memo. Includes all fields.
-       - MEMO_VIEW_METADATA_ONLY: The metadata only view of the memo. Excludes the content/snippet fields.
-  v1Node:
-    type: object
-    properties:
-      type:
-        $ref: '#/definitions/v1NodeType'
-      lineBreakNode:
-        $ref: '#/definitions/v1LineBreakNode'
-        description: Block nodes.
-      paragraphNode:
-        $ref: '#/definitions/v1ParagraphNode'
-      codeBlockNode:
-        $ref: '#/definitions/v1CodeBlockNode'
-      headingNode:
-        $ref: '#/definitions/v1HeadingNode'
-      horizontalRuleNode:
-        $ref: '#/definitions/v1HorizontalRuleNode'
-      blockquoteNode:
-        $ref: '#/definitions/v1BlockquoteNode'
-      listNode:
-        $ref: '#/definitions/v1ListNode'
-      orderedListItemNode:
-        $ref: '#/definitions/v1OrderedListItemNode'
-      unorderedListItemNode:
-        $ref: '#/definitions/v1UnorderedListItemNode'
-      taskListItemNode:
-        $ref: '#/definitions/v1TaskListItemNode'
-      mathBlockNode:
-        $ref: '#/definitions/v1MathBlockNode'
-      tableNode:
-        $ref: '#/definitions/v1TableNode'
-      embeddedContentNode:
-        $ref: '#/definitions/v1EmbeddedContentNode'
-      textNode:
-        $ref: '#/definitions/v1TextNode'
-        description: Inline nodes.
-      boldNode:
-        $ref: '#/definitions/v1BoldNode'
-      italicNode:
-        $ref: '#/definitions/v1ItalicNode'
-      boldItalicNode:
-        $ref: '#/definitions/v1BoldItalicNode'
-      codeNode:
-        $ref: '#/definitions/v1CodeNode'
-      imageNode:
-        $ref: '#/definitions/v1ImageNode'
-      linkNode:
-        $ref: '#/definitions/v1LinkNode'
-      autoLinkNode:
-        $ref: '#/definitions/v1AutoLinkNode'
-      tagNode:
-        $ref: '#/definitions/v1TagNode'
-      strikethroughNode:
-        $ref: '#/definitions/v1StrikethroughNode'
-      escapingCharacterNode:
-        $ref: '#/definitions/v1EscapingCharacterNode'
-      mathNode:
-        $ref: '#/definitions/v1MathNode'
-      highlightNode:
-        $ref: '#/definitions/v1HighlightNode'
-      subscriptNode:
-        $ref: '#/definitions/v1SubscriptNode'
-      superscriptNode:
-        $ref: '#/definitions/v1SuperscriptNode'
-      referencedContentNode:
-        $ref: '#/definitions/v1ReferencedContentNode'
-      spoilerNode:
-        $ref: '#/definitions/v1SpoilerNode'
-      htmlElementNode:
-        $ref: '#/definitions/v1HTMLElementNode'
-  v1NodeType:
-    type: string
-    enum:
-      - NODE_UNSPECIFIED
-      - LINE_BREAK
-      - PARAGRAPH
-      - CODE_BLOCK
-      - HEADING
-      - HORIZONTAL_RULE
-      - BLOCKQUOTE
-      - LIST
-      - ORDERED_LIST_ITEM
-      - UNORDERED_LIST_ITEM
-      - TASK_LIST_ITEM
-      - MATH_BLOCK
-      - TABLE
-      - EMBEDDED_CONTENT
-      - TEXT
-      - BOLD
-      - ITALIC
-      - BOLD_ITALIC
-      - CODE
-      - IMAGE
-      - LINK
-      - AUTO_LINK
-      - TAG
-      - STRIKETHROUGH
-      - ESCAPING_CHARACTER
-      - MATH
-      - HIGHLIGHT
-      - SUBSCRIPT
-      - SUPERSCRIPT
-      - REFERENCED_CONTENT
-      - SPOILER
-      - HTML_ELEMENT
-    default: NODE_UNSPECIFIED
-    description: |2-
-       - LINE_BREAK: Block nodes.
-       - TEXT: Inline nodes.
-  v1OrderedListItemNode:
-    type: object
-    properties:
-      number:
-        type: string
-      indent:
-        type: integer
-        format: int32
-      children:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/v1Node'
-  v1ParagraphNode:
-    type: object
-    properties:
-      children:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/v1Node'
-  v1ParseMarkdownRequest:
-    type: object
-    properties:
-      markdown:
-        type: string
-  v1ParseMarkdownResponse:
-    type: object
-    properties:
-      nodes:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/v1Node'
-  v1Reaction:
-    type: object
-    properties:
-      id:
-        type: integer
-        format: int32
-      creator:
-        type: string
-        title: |-
-          The name of the creator.
-          Format: users/{id}
-      contentId:
-        type: string
-      reactionType:
-        type: string
-  v1ReferencedContentNode:
-    type: object
-    properties:
-      resourceName:
-        type: string
-      params:
-        type: string
-  v1Resource:
+          $ref: '#/definitions/resourcesResource'
+  resourcesResource:
     type: object
     properties:
       name:
@@ -2134,123 +2117,44 @@ definitions:
         title: |-
           The related memo.
           Format: memos/{id}
-  v1RestoreMarkdownNodesRequest:
+  rpcStatus:
     type: object
     properties:
-      nodes:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      details:
         type: array
         items:
           type: object
-          $ref: '#/definitions/v1Node'
-  v1RestoreMarkdownNodesResponse:
+          $ref: '#/definitions/protobufAny'
+  usersListUserAccessTokensResponse:
     type: object
     properties:
-      markdown:
-        type: string
-  v1RowStatus:
-    type: string
-    enum:
-      - ROW_STATUS_UNSPECIFIED
-      - ACTIVE
-      - ARCHIVED
-    default: ROW_STATUS_UNSPECIFIED
-  v1SearchUsersResponse:
+      accessTokens:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/usersUserAccessToken'
+  usersListUsersResponse:
     type: object
     properties:
       users:
         type: array
         items:
           type: object
-          $ref: '#/definitions/v1User'
-  v1SpoilerNode:
+          $ref: '#/definitions/usersUser'
+  usersSearchUsersResponse:
     type: object
     properties:
-      content:
-        type: string
-  v1StrikethroughNode:
-    type: object
-    properties:
-      content:
-        type: string
-  v1StringifyMarkdownNodesRequest:
-    type: object
-    properties:
-      nodes:
+      users:
         type: array
         items:
           type: object
-          $ref: '#/definitions/v1Node'
-  v1StringifyMarkdownNodesResponse:
-    type: object
-    properties:
-      plainText:
-        type: string
-  v1SubscriptNode:
-    type: object
-    properties:
-      content:
-        type: string
-  v1SuperscriptNode:
-    type: object
-    properties:
-      content:
-        type: string
-  v1TableNode:
-    type: object
-    properties:
-      header:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/v1Node'
-      delimiter:
-        type: array
-        items:
-          type: string
-      rows:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/TableNodeRow'
-  v1TagNode:
-    type: object
-    properties:
-      content:
-        type: string
-  v1TaskListItemNode:
-    type: object
-    properties:
-      symbol:
-        type: string
-      indent:
-        type: integer
-        format: int32
-      complete:
-        type: boolean
-      children:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/v1Node'
-  v1TextNode:
-    type: object
-    properties:
-      content:
-        type: string
-  v1UnorderedListItemNode:
-    type: object
-    properties:
-      symbol:
-        type: string
-      indent:
-        type: integer
-        format: int32
-      children:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/v1Node'
-  v1User:
+          $ref: '#/definitions/usersUser'
+  usersUser:
     type: object
     properties:
       name:
@@ -2277,14 +2181,14 @@ definitions:
       password:
         type: string
       rowStatus:
-        $ref: '#/definitions/v1RowStatus'
+        $ref: '#/definitions/commonRowStatus'
       createTime:
         type: string
         format: date-time
       updateTime:
         type: string
         format: date-time
-  v1UserAccessToken:
+  usersUserAccessToken:
     type: object
     properties:
       accessToken:
@@ -2297,11 +2201,107 @@ definitions:
       expiresAt:
         type: string
         format: date-time
-  v1Visibility:
-    type: string
-    enum:
-      - VISIBILITY_UNSPECIFIED
-      - PRIVATE
-      - PROTECTED
-      - PUBLIC
-    default: VISIBILITY_UNSPECIFIED
+  v1memosLocation:
+    type: object
+    properties:
+      placeholder:
+        type: string
+      latitude:
+        type: number
+        format: double
+      longitude:
+        type: number
+        format: double
+  v1memosMemo:
+    type: object
+    properties:
+      name:
+        type: string
+        description: |-
+          The name of the memo.
+          Format: memos/{id}
+          id is the system generated id.
+      uid:
+        type: string
+        description: The user defined id of the memo.
+      rowStatus:
+        $ref: '#/definitions/commonRowStatus'
+      creator:
+        type: string
+        title: |-
+          The name of the creator.
+          Format: users/{id}
+      createTime:
+        type: string
+        format: date-time
+      updateTime:
+        type: string
+        format: date-time
+      displayTime:
+        type: string
+        format: date-time
+      content:
+        type: string
+      nodes:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/markdownNode'
+        readOnly: true
+      visibility:
+        $ref: '#/definitions/memosVisibility'
+      tags:
+        type: array
+        items:
+          type: string
+      pinned:
+        type: boolean
+      resources:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/resourcesResource'
+      relations:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/memosMemoRelation'
+      reactions:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/memosReaction'
+        readOnly: true
+      property:
+        $ref: '#/definitions/memosMemoProperty'
+        readOnly: true
+      parent:
+        type: string
+        title: |-
+          The name of the parent memo.
+          Format: memos/{id}
+        readOnly: true
+      snippet:
+        type: string
+        description: The snippet of the memo content. Plain text only.
+        readOnly: true
+      location:
+        $ref: '#/definitions/v1memosLocation'
+        description: The location of the memo.
+  v1usersUserSetting:
+    type: object
+    properties:
+      name:
+        type: string
+        title: |-
+          The name of the user.
+          Format: users/{id}
+      locale:
+        type: string
+        description: The preferred locale of the user.
+      appearance:
+        type: string
+        description: The preferred appearance of the user.
+      memoVisibility:
+        type: string
+        description: The default visibility of the memo.

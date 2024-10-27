@@ -12,7 +12,7 @@ import { FieldMask } from "../../../google/protobuf/field_mask";
 import { Timestamp } from "../../../google/protobuf/timestamp";
 import { RowStatus, rowStatusFromJSON, rowStatusToNumber } from "../common/common";
 
-export const protobufPackage = "memos.api.v1";
+export const protobufPackage = "memos.api.v1.users";
 
 export interface User {
   /**
@@ -1271,7 +1271,7 @@ export const DeleteUserAccessTokenRequest: MessageFns<DeleteUserAccessTokenReque
 export type UserServiceDefinition = typeof UserServiceDefinition;
 export const UserServiceDefinition = {
   name: "UserService",
-  fullName: "memos.api.v1.UserService",
+  fullName: "memos.api.v1.users.UserService",
   methods: {
     /** ListUsers returns a list of users. */
     listUsers: {

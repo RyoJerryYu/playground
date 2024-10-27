@@ -4,7 +4,7 @@
 //- protoc (unknown)
 //source: api/v1/users/user_service.proto
 
-package apiv1
+package users
 
 import (
 	bytes "bytes"

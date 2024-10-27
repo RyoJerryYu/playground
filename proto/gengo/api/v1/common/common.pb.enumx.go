@@ -4,7 +4,7 @@
 //- protoc (unknown)
 //source: api/v1/common/common.proto
 
-package apiv1
+package common
 
 import (
 	constraints "golang.org/x/exp/constraints"

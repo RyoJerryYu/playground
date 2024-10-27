@@ -2,11 +2,11 @@
 // source: api/v1/markdown/markdown_service.proto
 
 /*
-Package apiv1 is a reverse proxy.
+Package markdown is a reverse proxy.
 
 It translates gRPC into RESTful JSON APIs.
 */
-package apiv1
+package markdown
 
 import (
 	"context"
@@ -160,7 +160,7 @@ func RegisterMarkdownServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.MarkdownService/ParseMarkdown", runtime.WithHTTPPathPattern("/api/v1/markdown:parse"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.markdown.MarkdownService/ParseMarkdown", runtime.WithHTTPPathPattern("/api/v1/markdown:parse"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -185,7 +185,7 @@ func RegisterMarkdownServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.MarkdownService/RestoreMarkdownNodes", runtime.WithHTTPPathPattern("/api/v1/markdown/node:restore"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.markdown.MarkdownService/RestoreMarkdownNodes", runtime.WithHTTPPathPattern("/api/v1/markdown/node:restore"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -210,7 +210,7 @@ func RegisterMarkdownServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.MarkdownService/StringifyMarkdownNodes", runtime.WithHTTPPathPattern("/api/v1/markdown/node:stringify"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.markdown.MarkdownService/StringifyMarkdownNodes", runtime.WithHTTPPathPattern("/api/v1/markdown/node:stringify"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -235,7 +235,7 @@ func RegisterMarkdownServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.MarkdownService/GetLinkMetadata", runtime.WithHTTPPathPattern("/api/v1/markdown/link:metadata"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/memos.api.v1.markdown.MarkdownService/GetLinkMetadata", runtime.WithHTTPPathPattern("/api/v1/markdown/link:metadata"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -299,7 +299,7 @@ func RegisterMarkdownServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.MarkdownService/ParseMarkdown", runtime.WithHTTPPathPattern("/api/v1/markdown:parse"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.markdown.MarkdownService/ParseMarkdown", runtime.WithHTTPPathPattern("/api/v1/markdown:parse"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -321,7 +321,7 @@ func RegisterMarkdownServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.MarkdownService/RestoreMarkdownNodes", runtime.WithHTTPPathPattern("/api/v1/markdown/node:restore"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.markdown.MarkdownService/RestoreMarkdownNodes", runtime.WithHTTPPathPattern("/api/v1/markdown/node:restore"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -343,7 +343,7 @@ func RegisterMarkdownServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.MarkdownService/StringifyMarkdownNodes", runtime.WithHTTPPathPattern("/api/v1/markdown/node:stringify"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.markdown.MarkdownService/StringifyMarkdownNodes", runtime.WithHTTPPathPattern("/api/v1/markdown/node:stringify"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -365,7 +365,7 @@ func RegisterMarkdownServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.MarkdownService/GetLinkMetadata", runtime.WithHTTPPathPattern("/api/v1/markdown/link:metadata"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/memos.api.v1.markdown.MarkdownService/GetLinkMetadata", runtime.WithHTTPPathPattern("/api/v1/markdown/link:metadata"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return

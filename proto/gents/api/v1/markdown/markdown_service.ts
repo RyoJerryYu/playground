@@ -7,7 +7,7 @@
 /* eslint-disable */
 import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 
-export const protobufPackage = "memos.api.v1";
+export const protobufPackage = "memos.api.v1.markdown";
 
 export enum NodeType {
   NODE_UNSPECIFIED = "NODE_UNSPECIFIED",
@@ -3103,7 +3103,7 @@ export const HTMLElementNode_AttributesEntry: MessageFns<HTMLElementNode_Attribu
 export type MarkdownServiceDefinition = typeof MarkdownServiceDefinition;
 export const MarkdownServiceDefinition = {
   name: "MarkdownService",
-  fullName: "memos.api.v1.MarkdownService",
+  fullName: "memos.api.v1.markdown.MarkdownService",
   methods: {
     /** ParseMarkdown parses the given markdown content and returns a list of nodes. */
     parseMarkdown: {

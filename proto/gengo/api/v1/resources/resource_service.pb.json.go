@@ -4,7 +4,7 @@
 //- protoc (unknown)
 //source: api/v1/resources/resource_service.proto
 
-package apiv1
+package resources
 
 import (
 	protojson "google.golang.org/protobuf/encoding/protojson"

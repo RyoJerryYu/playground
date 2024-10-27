@@ -7,7 +7,7 @@
 /* eslint-disable */
 import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 
-export const protobufPackage = "memos.api.v1";
+export const protobufPackage = "memos.api.v1.memos";
 
 export interface Reaction {
   id: number;

@@ -4,7 +4,7 @@
 //- protoc (unknown)
 //source: api/v1/auth/auth_service.proto
 
-package apiv1
+package auth
 
 import (
 	protojson "google.golang.org/protobuf/encoding/protojson"
