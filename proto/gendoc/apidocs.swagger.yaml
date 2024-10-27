@@ -74,6 +74,11 @@ paths:
           in: query
           required: false
           type: string
+        - name: nested.idpId
+          in: query
+          required: false
+          type: integer
+          format: int32
       tags:
         - AuthService
   /api/v1/auth/signout:
@@ -523,6 +528,8 @@ paths:
                   type: object
                   $ref: '#/definitions/memosReaction'
                 readOnly: true
+              otherReaction:
+                $ref: '#/definitions/memosReaction'
               property:
                 $ref: '#/definitions/memosMemoProperty'
                 readOnly: true
@@ -1307,6 +1314,12 @@ definitions:
     properties:
       reaction:
         $ref: '#/definitions/memosReaction'
+  SignInWithSSORequestNested:
+    type: object
+    properties:
+      idpId:
+        type: integer
+        format: int32
   TableNodeRow:
     type: object
     properties:
@@ -2184,6 +2197,8 @@ definitions:
           type: object
           $ref: '#/definitions/memosReaction'
         readOnly: true
+      otherReaction:
+        $ref: '#/definitions/memosReaction'
       property:
         $ref: '#/definitions/memosMemoProperty'
         readOnly: true

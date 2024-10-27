@@ -298,6 +298,35 @@ func (m *Memo) validate(all bool) error {
 	}
 
 	if all {
+		switch v := interface{}(m.GetOtherReaction()).(type) {
+		case interface{ ValidateAll() error }:
+			if err := v.ValidateAll(); err != nil {
+				errors = append(errors, MemoValidationError{
+					field:  "OtherReaction",
+					reason: "embedded message failed validation",
+					cause:  err,
+				})
+			}
+		case interface{ Validate() error }:
+			if err := v.Validate(); err != nil {
+				errors = append(errors, MemoValidationError{
+					field:  "OtherReaction",
+					reason: "embedded message failed validation",
+					cause:  err,
+				})
+			}
+		}
+	} else if v, ok := interface{}(m.GetOtherReaction()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return MemoValidationError{
+				field:  "OtherReaction",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if all {
 		switch v := interface{}(m.GetProperty()).(type) {
 		case interface{ ValidateAll() error }:
 			if err := v.ValidateAll(); err != nil {

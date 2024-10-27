@@ -3,7 +3,7 @@ module github.com/RyoJerryYu/playground
 go 1.22.3
 
 require (
-	github.com/RyoJerryYu/protoc-gen-plugins v1.0.7
+	github.com/RyoJerryYu/protoc-gen-plugins v1.0.9
 	github.com/akuity/grpc-gateway-client v0.0.0-20240912082144-55a48e8b4b89
 	github.com/bufbuild/buf v1.45.0
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.22.0

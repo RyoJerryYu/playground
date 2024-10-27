@@ -129,6 +129,7 @@ export interface Memo {
   resources: Resource[];
   relations: MemoRelation[];
   reactions: Reaction[];
+  otherReaction?: Reaction | undefined;
   property?:
     | MemoProperty
     | undefined;
@@ -334,6 +335,7 @@ function createBaseMemo(): Memo {
     resources: [],
     relations: [],
     reactions: [],
+    otherReaction: undefined,
     property: undefined,
     snippet: "",
   };
@@ -385,6 +387,9 @@ export const Memo: MessageFns<Memo> = {
     }
     for (const v of message.reactions) {
       Reaction.encode(v!, writer.uint32(130).fork()).join();
+    }
+    if (message.otherReaction !== undefined) {
+      Reaction.encode(message.otherReaction, writer.uint32(162).fork()).join();
     }
     if (message.property !== undefined) {
       MemoProperty.encode(message.property, writer.uint32(138).fork()).join();
@@ -507,6 +512,13 @@ export const Memo: MessageFns<Memo> = {
 
           message.reactions.push(Reaction.decode(reader, reader.uint32()));
           continue;
+        case 20:
+          if (tag !== 162) {
+            break;
+          }
+
+          message.otherReaction = Reaction.decode(reader, reader.uint32());
+          continue;
         case 17:
           if (tag !== 138) {
             break;
@@ -550,6 +562,9 @@ export const Memo: MessageFns<Memo> = {
     message.resources = object.resources?.map((e) => Resource.fromPartial(e)) || [];
     message.relations = object.relations?.map((e) => MemoRelation.fromPartial(e)) || [];
     message.reactions = object.reactions?.map((e) => Reaction.fromPartial(e)) || [];
+    message.otherReaction = (object.otherReaction !== undefined && object.otherReaction !== null)
+      ? Reaction.fromPartial(object.otherReaction)
+      : undefined;
     message.property = (object.property !== undefined && object.property !== null)
       ? MemoProperty.fromPartial(object.property)
       : undefined;

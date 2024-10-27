@@ -164,6 +164,7 @@ message Memo {
   repeated MemoRelation relations = 15;
 
   repeated Reaction reactions = 16 [(google.api.field_behavior) = OUTPUT_ONLY];
+  Reaction other_reaction = 20;
 
   MemoProperty property = 17 [(google.api.field_behavior) = OUTPUT_ONLY];
 
