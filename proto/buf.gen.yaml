@@ -6,7 +6,7 @@ managed:
       module: buf.build/googleapis/googleapis
   override:
     - file_option: go_package_prefix
-      value: github.com/RyoJerryYu/proto/gen/
+      value: github.com/RyoJerryYu/playground/proto/gengo/
 plugins:
   # protoc-gen-go
   - remote: buf.build/protocolbuffers/go
